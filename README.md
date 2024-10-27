@@ -1,13 +1,15 @@
-# GerMed - Sistema de controle de estoque de medicamentos
+# Sistema de Gestão de Medicamentos
 
-Uma plataforma em desenvolvimento para melhorar e facilitar o controle de medicamentos dentro de uma unidade de saúde. A solução proposta tem como objetivo garantir uma gestão eficiente do estoque de medicamentos, oferecendo ferramentas que automatizam o registro e a distribuição de medicamentos, minimizando erros e assegurando conformidade com as normas de saúde.
+## Uma Breve Descrição do Contexto / Problema
 
-A plataforma permitirá o gerenciamento detalhado dos medicamentos, armazenando informações como nome, descrição, quantidade em estoque, data de validade, categorias e condições de armazenamento. Além disso, o sistema automatizará alertas sobre medicamentos próximos ao vencimento e com baixo estoque, ajudando na tomada de decisões para reposição de produtos de forma proativa.
+Uma unidade de saúde, enfrentando desafios na gestão de medicamentos, solicitou à nossa equipe (esta turma, esta sala de aula) o desenvolvimento de uma solução que possa simplificar e aprimorar o controle de estoque de medicamentos. O objetivo é garantir que a unidade de saúde mantenha um estoque organizado e bem gerenciado, minimizando desperdícios e assegurando a conformidade com as regulamentações sanitárias. A plataforma buscará tornar o processo de controle de estoque mais ágil e confiável, facilitando a tomada de decisões baseada em dados claros e atualizados.
 
-Outro ponto crucial é a integração com o processo de distribuição de medicamentos mediante apresentação de receitas médicas, assegurando que todos os registros das retiradas sejam rastreáveis. O sistema também incluirá a gestão de fornecedores e facilitará a emissão de relatórios sobre o estoque, proporcionando uma visão completa e atualizada para os gestores.
+Após discutirmos com os envolvidos e interessados, identificamos requisitos fundamentais para projetar um sistema que permita registrar, monitorar e organizar os medicamentos de forma prática e eficiente. O sistema armazenará informações detalhadas sobre cada medicamento, como nome, descrição, quantidade em estoque, data de validade e condições de armazenamento, além de organizar os medicamentos em categorias específicas para facilitar a busca.
+
+Outro ponto importante é que o sistema permitirá o gerenciamento de fornecedores e registrará a distribuição de medicamentos com base na apresentação de receitas médicas. Com isso, o sistema manterá um controle completo de retiradas, garantindo rastreabilidade e documentando cada movimentação com segurança.
 
 ## Iteração-I: Prova de Conceito - Controle de Estoque
 
-Nesta primeira fase, como prova de conceito e viabilidade, o sistema se concentrará no controle básico do estoque de medicamentos. Será possível cadastrar medicamentos com suas respectivas quantidades, datas de validade e categorias, além de gerar alertas automáticos para medicamentos com validade próxima do vencimento.
+Nesta primeira fase, como prova de conceito e viabilidade, o sistema se concentrará em funcionalidades essenciais para o controle básico de estoque de medicamentos. Será possível cadastrar medicamentos, especificando quantidades, datas de validade e categorias, e o sistema notificará automaticamente sobre medicamentos próximos do vencimento.
 
-A principal funcionalidade nesta fase será o gerenciamento das retiradas de medicamentos com o registro obrigatório de receitas médicas, garantindo que todas as movimentações sejam devidamente documentadas.
+A funcionalidade principal nesta fase será o controle de retiradas de medicamentos, com o registro obrigatório de receitas médicas, assegurando que todas as movimentações estejam devidamente documentadas e rastreáveis.
