@@ -1,4 +1,4 @@
-# Ger_Med Sistema de controle de estoque de medicamentos
+# GerMed - Sistema de controle de estoque de medicamentos
 
 Uma plataforma em desenvolvimento para melhorar e facilitar o controle de medicamentos dentro de uma unidade de saúde. A solução proposta tem como objetivo garantir uma gestão eficiente do estoque de medicamentos, oferecendo ferramentas que automatizam o registro e a distribuição de medicamentos, minimizando erros e assegurando conformidade com as normas de saúde.
 
