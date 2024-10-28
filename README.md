@@ -12,4 +12,4 @@ Outro ponto importante é que o sistema permitirá o gerenciamento de fornecedor
 
 Nesta primeira fase, como prova de conceito e viabilidade, o sistema se concentrará em funcionalidades essenciais para o controle básico de estoque de medicamentos. Será possível cadastrar medicamentos, especificando quantidades, datas de validade e categorias, e o sistema notificará automaticamente sobre medicamentos próximos do vencimento.
 
-A funcionalidade principal nesta fase será o controle de retiradas de medicamentos, com o registro obrigatório de receitas médicas, assegurando que todas as movimentações estejam devidamente documentadas e rastreáveis.
+A funcionalidade principal nesta fase será o controle de retiradas de medicamentos, com o registro de receitas médicas, assegurando que todas as movimentações estejam devidamente documentadas e rastreáveis.
