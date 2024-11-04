@@ -30,7 +30,7 @@ O modelo escolhido será o **Ágil**, especificamente utilizando metodologias co
 **Etapas e Atividades**
 - **Planejamento**: 
   - Definir requisitos principais e funcionalidades essenciais do sistema.
-  - Planejar backlog de tarefas no Trello ou GitHub Projects.
+  - Planejar backlog de tarefas no GitHub Projects.
 - **Desenvolvimento**: 
   - Implementar CRUDs de Categorias, Fornecedores e Medicamentos.
   - Configurar banco de dados e integrar ferramentas de gerenciamento de dependências (Composer) e controle de versão (Git).
@@ -44,7 +44,7 @@ O modelo escolhido será o **Ágil**, especificamente utilizando metodologias co
 **Papéis e Responsabilidades**  
 - **Desenvolvedor**: Implementa os CRUDs e configurações de backend (Composer, integração com banco de dados), realiza testes e documenta funcionalidades.
 - **Tester**: Define e executa casos de teste para os CRUDs e garante a cobertura básica de teste.
-- **Gerente de Projeto**: Organiza as tarefas no Trello/GitHub Projects, revisa o progresso, e verifica se o projeto está alinhado com os objetivos iniciais.
+- **Gerente de Projeto**: Organiza as tarefas no GitHub Projects, revisa o progresso, e verifica se o projeto está alinhado com os objetivos iniciais.
 
 **Artefatos de Entrada e Saída**  
 - **Planejamento de Backlog**: Documento inicial com as funcionalidades principais e backlog.
