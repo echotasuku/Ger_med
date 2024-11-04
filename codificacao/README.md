@@ -1,1 +1,1 @@
-#Depos de descompactar, rodar o composer install 
+Depois de descompactar, rodar o composer install 
