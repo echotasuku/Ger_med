@@ -38,8 +38,7 @@ O modelo escolhido será o **Ágil**, especificamente utilizando metodologias co
   - Implementar CRUDs de Categorias, Fornecedores e Medicamentos.
   - Configurar banco de dados e integrar ferramentas de gerenciamento de dependências (Composer) e controle de versão (Git).
 - **Teste**: 
-  - Realizar testes unitários para validar o CRUD de medicamentos.
-  - Testes de integração para garantir que o fluxo entre categorias e fornecedores está correto.
+  - Realizar testes unitários para validar o CRUDs
 - **Entrega**: 
   - Apresentar uma versão funcional para feedback.
 
@@ -58,7 +57,7 @@ O modelo escolhido será o **Ágil**, especificamente utilizando metodologias co
 
 ## 3. Gestão de Mudanças e Evolução do Projeto
 
-O controle de versão será feito no **Git**, onde cada funcionalidade e correção será registrada com commits claros, utilizando branches específicos para cada feature.  
+O controle de versão será feito no **Git**,
 Para o gerenciamento de mudanças e acompanhamento do progresso, será utilizado o **GitHub Projects**. As tarefas serão organizadas em quadros Kanban, com colunas para tarefas a fazer, em andamento e concluídas, para facilitar o acompanhamento. 
 
 ---
@@ -74,9 +73,4 @@ Para a prova de conceito, será implementado o CRUD de **Categorias** e **Fornec
 2. **Desenvolvimento dos CRUDs**  
    - Implementação dos CRUDs de Categorias e Fornecedores.
    - Cada operação (Create, Read, Update, Delete) será realizada por meio de rotas específicas no Laravel.
-
-3. **Automação**  
-   - Utilização do **PHPUnit** para testes automatizados das operações básicas do CRUD.
-   - Configuração do **GitHub Actions** para integração contínua, rodando testes a cada push para validar as funcionalidades.
-
 
