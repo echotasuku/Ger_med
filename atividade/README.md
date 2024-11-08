@@ -12,16 +12,19 @@ O sistema permitirá o cadastro de medicamentos, fornecedores e categorias, alé
 - **Registro de Retiradas**: Rastreabilidade de medicamentos com base em receitas médicas.
 
 **Não Incluso**  
-Funcionalidades mais avançadas de integração com outros sistemas de saúde e relatórios personalizados de saúde pública não serão abordadas nesta fase.
+Funcionalidades mais avançadas de integração com outros sistemas de saúde e relatórios personalizados de saúde pública não estarão no projeto
 
 **Público-Alvo**  
 O sistema é destinado a farmacêuticos e funcionários administrativos de UBS, que terão acesso a diferentes funcionalidades e permissões.
 
 **Cenário de Validação**  
-Para validar esta entrega, será demonstrado o fluxo completo de cadastro de medicamentos, incluindo categorias e fornecedores. Isso permitirá a criação de um inventário inicial de medicamentos e a consulta rápida de informações.
 
----
+Para validar esta entrega, será demonstrado o funcionamento dos módulos de CRUD para **Categorias** e **Fornecedores**. A implementação desses módulos permite uma base fundamental para a gestão de medicamentos, facilitando a criação de um inventário inicial e garantindo uma consulta rápida e precisa das informações necessárias.
 
+- **Categorias**: O CRUD de Categorias permite a classificação dos medicamentos de forma organizada, separando-os por tipo, uso ou qualquer outro critério relevante. Essa funcionalidade é essencial para que o farmaceutico possa organizar o estoque de forma prática e eficiente, além de facilitar a localização de medicamentos específicos em consultas ou retiradas.
+
+- **Fornecedores**: O CRUD de Fornecedores permite a gestão detalhada dos parceiros que abastecem a farmácia com medicamentos e insumos. Essa funcionalidade permite registrar e atualizar informações de cada fornecedor, incluindo dados de contato, histórico de fornecimento e reputação.
+- 
 ## 2. Definição do Processo e Ciclo de Vida do Desenvolvimento
 
 **Escolha e Justificativa do Modelo de Desenvolvimento**  
