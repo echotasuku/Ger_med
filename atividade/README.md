@@ -57,7 +57,7 @@ O modelo escolhido será o **Ágil**, especificamente utilizando metodologias co
 ## 3. Gestão de Mudanças e Evolução do Projeto
 
 O controle de versão será feito no **Git**, onde cada funcionalidade e correção será registrada com commits claros, utilizando branches específicos para cada feature.  
-Para o gerenciamento de mudanças e acompanhamento do progresso, será utilizado o **GitHub Projects** ou o **Trello**. As tarefas serão organizadas em quadros Kanban, com colunas para tarefas a fazer, em andamento e concluídas, para facilitar o acompanhamento. 
+Para o gerenciamento de mudanças e acompanhamento do progresso, será utilizado o **GitHub Projects**. As tarefas serão organizadas em quadros Kanban, com colunas para tarefas a fazer, em andamento e concluídas, para facilitar o acompanhamento. 
 
 ---
 
