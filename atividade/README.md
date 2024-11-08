@@ -1,4 +1,4 @@
-# Estrutura Básica de Desenvolvimento do Sistema de Gestão de Medicamentos
+# Sistema de gerenciamento de estoque de medicamentos
 
 ## 1. Contexto do Projeto (Escopo)
 
