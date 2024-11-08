@@ -41,7 +41,6 @@ O modelo escolhido será o **Ágil**, especificamente utilizando metodologias co
   - Realizar testes unitários para validar o CRUD de medicamentos.
   - Testes de integração para garantir que o fluxo entre categorias e fornecedores está correto.
 - **Entrega**: 
-  - Configurar deploy automatizado para ambiente de teste.
   - Apresentar uma versão funcional para feedback.
 
 **Papéis e Responsabilidades**  
