@@ -1,6 +1,6 @@
-# API de Gestão de Categorias e Fornecedores
 
-## 6.17 Listar Categorias
+
+## 1.0 Listar Categorias
 
 **Método:** `GET`  
 **Caminho:** `/categorias`  
@@ -14,3 +14,6 @@ Status Code: `200`
     "descricao": "Para dores de cabeça e dores no corpo"
   }
 ]
+
+
+#
