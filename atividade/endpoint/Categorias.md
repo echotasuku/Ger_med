@@ -1,15 +1,16 @@
-Listar Categorias (Get)
-[{
+# API de Gestão de Categorias e Fornecedores
 
-&quot;id&quot;: 1,
-&quot;name&quot;: &quot;Xarope&quot;,
-&quot;descricao&quot;: &quot;expectorante, sabor cereja&quot;
+## 6.17 Listar Categorias
 
-},
-{
-
-&quot;id&quot;: 3,
-&quot;name&quot;: &quot;Analgesico&quot;,
-&quot;descricao&quot;: &quot;Para dores de cabeça e dores no corpo&quot;
-
-}]
+**Método:** `GET`  
+**Caminho:** `/categorias`  
+**Resposta:**  
+Status Code: `200`
+```json
+[
+  {
+    "id": 1,
+    "name": "Analgesico",
+    "descricao": "Para dores de cabeça e dores no corpo"
+  }
+]
