@@ -2,75 +2,85 @@
 
 ## 1. Contexto do Projeto (Escopo)
 
-**Descrição do Produto**  
+### Descrição do Produto
 O sistema de gestão de medicamentos visa melhorar o controle e a organização de estoque de medicamentos em Unidades Básicas de Saúde (UBS). O principal problema a ser resolvido é a falta de um controle eficiente para garantir a rastreabilidade de medicamentos, gestão de estoque, validade dos produtos e documentação de retiradas baseadas em receitas.
 
-**Escopo**  
-O sistema permitirá o cadastro de medicamentos, fornecedores e categorias, além do controle de estoque e registro de retiradas. As principais funcionalidades incluem:
+### Escopo
+O sistema permitirá:
 - **Cadastro de Medicamentos**: Registro com nome, descrição, quantidade, validade, categoria e fornecedor.
 - **Controle de Estoque**: Controle da quantidade disponível e alertas para medicamentos próximos da validade ou com baixo estoque.
 - **Registro de Retiradas**: Rastreabilidade de medicamentos com base em receitas médicas.
 
 **Não Incluso**  
-Funcionalidades mais avançadas de integração com outros sistemas de saúde e relatórios personalizados de saúde pública não estarão no projeto
+Funcionalidades mais avançadas, como integração com outros sistemas de saúde e relatórios personalizados de saúde pública, não estarão incluídas nesta fase do projeto.
 
-**Público-Alvo**  
+### Público-Alvo
 O sistema é destinado a farmacêuticos e funcionários administrativos de UBS, que terão acesso a diferentes funcionalidades e permissões.
 
-**Cenário de Validação**  
+### Cenário de Validação
+Para validar esta entrega, será demonstrado o funcionamento dos módulos de **CRUD para Categorias e Fornecedores**. Estes módulos fornecem a base necessária para a gestão de medicamentos, facilitando a criação de um inventário inicial e garantindo consultas rápidas e precisas.
 
-Para validar esta entrega, será demonstrado o funcionamento dos módulos de CRUD para **Categorias** e **Fornecedores**. A implementação desses módulos permite uma base fundamental para a gestão de medicamentos, facilitando a criação de um inventário inicial e garantindo uma consulta rápida e precisa das informações necessárias.
+- **Categorias**: Permite classificar medicamentos de forma organizada, separando-os por tipo, uso ou critérios relevantes. Isso ajuda o farmacêutico a organizar o estoque de forma prática e eficiente, além de facilitar a localização de medicamentos específicos.
+- **Fornecedores**: Permite gerenciar informações detalhadas sobre os parceiros que abastecem a farmácia, incluindo dados de contato e histórico de fornecimento.
 
-- **Categorias**: O CRUD de Categorias permite a classificação dos medicamentos de forma organizada, separando-os por tipo, uso ou qualquer outro critério relevante. Essa funcionalidade é essencial para que o farmaceutico possa organizar o estoque de forma prática e eficiente, além de facilitar a localização de medicamentos específicos em consultas ou retiradas.
+---
 
-- **Fornecedores**: O CRUD de Fornecedores permite a gestão detalhada dos parceiros que abastecem a farmácia com medicamentos e insumos. Essa funcionalidade permite registrar e atualizar informações de cada fornecedor, incluindo dados de contato, histórico de fornecimento e reputação.
-- 
 ## 2. Definição do Processo e Ciclo de Vida do Desenvolvimento
 
-**Escolha e Justificativa do Modelo de Desenvolvimento**  
-O modelo escolhido será o **Ágil**, especificamente utilizando metodologias como o Scrum, com iterações curtas para possibilitar feedback constante e adaptações rápidas às necessidades. Esse modelo foi escolhido devido à necessidade de flexibilidade e adaptação ao longo do desenvolvimento, além de possibilitar entregas incrementais que agreguem valor ao usuário.
+### Escolha e Justificativa do Modelo de Desenvolvimento
+O modelo escolhido será o **Ágil**, utilizando metodologias como o Scrum, com iterações curtas que permitem feedback constante e adaptações rápidas. Esse modelo é adequado devido à necessidade de flexibilidade e entregas incrementais que agreguem valor ao usuário.
 
-**Etapas e Atividades**
-- **Planejamento**: 
-  - Definir requisitos principais e funcionalidades essenciais do sistema.
-  - Planejar backlog de tarefas no GitHub Projects.
-- **Desenvolvimento**: 
-  - Implementar CRUDs de Categorias, Fornecedores e Medicamentos.
-  - Configurar banco de dados e integrar ferramentas de gerenciamento de dependências (Composer) e controle de versão (Git).
-- **Teste**: 
-  - Realizar testes unitários para validar o CRUDs
-- **Entrega**: 
-  - Apresentar uma versão funcional para feedback.
+### Etapas e Atividades
+1. **Planejamento**:
+   - Definir os requisitos principais e funcionalidades essenciais do sistema.
+   - Planejar o backlog de tarefas no GitHub Projects.
+2. **Desenvolvimento**:
+   - Implementar CRUDs de Categorias e Fornecedores.
+   - Configurar o banco de dados e integrar ferramentas de gerenciamento de dependências (Composer) e controle de versão (Git).
+3. **Teste**:
+   - Realizar testes unitários para validar os CRUDs.
+4. **Entrega**:
+   - Apresentar uma versão funcional para feedback e validação.
 
-**Papéis e Responsabilidades**  
-- **Desenvolvedor**: Implementa os CRUDs e configurações de backend (Composer, integração com banco de dados), realiza testes e documenta funcionalidades.
-- **Tester**: Define e executa casos de teste para os CRUDs e garante a cobertura básica de teste.
-- **Gerente de Projeto**: Organiza as tarefas no GitHub Projects, revisa o progresso, e verifica se o projeto está alinhado com os objetivos iniciais.
+### Papéis e Responsabilidades
+- **Desenvolvedor**:
+  - Implementar os CRUDs e configurar o backend.
+  - Realizar testes e documentar funcionalidades.
+- **Tester**:
+  - Definir e executar casos de teste para os CRUDs.
+  - Garantir a cobertura básica dos testes.
+- **Gerente de Projeto**:
+  - Organizar tarefas no GitHub Projects.
+  - Revisar o progresso e garantir alinhamento com os objetivos.
 
-**Artefatos de Entrada e Saída**  
+### Artefatos de Entrada e Saída
 - **Planejamento de Backlog**: Documento inicial com as funcionalidades principais e backlog.
 - **Documentação de Requisitos**: Lista das funcionalidades definidas com base nas necessidades dos usuários.
-- **Protótipo Funcional**: CRUDs implementados, sendo o artefato de saída para o processo de desenvolvimento.
+- **Protótipo Funcional**: CRUDs implementados, sendo o artefato de saída do processo de desenvolvimento.
 - **Documentação de Testes**: Casos de teste com resultados esperados e obtidos.
 
 ---
 
 ## 3. Gestão de Mudanças e Evolução do Projeto
 
-O controle de versão será feito no **Git**,
-Para o gerenciamento de mudanças e acompanhamento do progresso, será utilizado o **GitHub Projects**. As tarefas serão organizadas em quadros Kanban, com colunas para tarefas a fazer, em andamento e concluídas, para facilitar o acompanhamento. 
+**Abordagem para Controle de Mudanças**  
+- O controle de versão será realizado no **Git**, com branches específicas para cada funcionalidade e commits regulares.
+- Para o gerenciamento de mudanças e acompanhamento do progresso, será utilizado o **GitHub Projects**. As tarefas serão organizadas em quadros Kanban, com colunas para tarefas a fazer, em andamento e concluídas.
+- O histórico de decisões será documentado no repositório (README ou Wiki), garantindo rastreabilidade.
 
 ---
 
 ## 4. Prova de Conceito
 
-Para a prova de conceito, será implementado o CRUD de **Categorias** e **Fornecedores**, com o seguinte fluxo básico:
+### Configuração de Dependências e Controle de Versão
+- **Composer**: Será usado para gerenciar as dependências do Laravel.
+- **Git**: Configuração com commits regulares para rastrear mudanças no código.
 
-1. **Configuração de Dependências e Controle de Versão**  
-   - O Composer será usado para instalar as dependências do Laravel.
-   - O Git será configurado com commits regulares, organizando as mudanças no código e facilitando o rastreamento de progresso.
+### Desenvolvimento dos CRUDs
+- Implementação dos **CRUDs de Categorias e Fornecedores**.
+- Cada operação (`Create`, `Read`, `Update`, `Delete`) será realizada por meio de rotas específicas no Laravel.
 
-2. **Desenvolvimento dos CRUDs**  
-   - Implementação dos CRUDs de Categorias e Fornecedores.
-   - Cada operação (Create, Read, Update, Delete) será realizada por meio de rotas específicas no Laravel.
+### Fluxo Básico da Prova de Conceito
+1. Criar, listar, atualizar e excluir categorias, permitindo a organização de medicamentos.
+2. Registrar, consultar e atualizar informações de fornecedores, garantindo rastreabilidade e controle.
 
