@@ -29,10 +29,11 @@ Para validar esta entrega, será demonstrado o funcionamento dos módulos de **C
 ## 2. Definição do Processo e Ciclo de Vida do Desenvolvimento
 
 ### Escolha e Justificativa do Modelo de Desenvolvimento
-O modelo escolhido será o **Ágil**, utilizando metodologias como o Scrum. Essa escolha se baseia na necessidade de:
-- Flexibilidade para se adaptar a mudanças de requisitos.
-- Feedback constante durante as iterações.
-- Entregas incrementais que agreguem valor ao sistema.
+O modelo escolhido será o **Iterativo Incremental**. Essa escolha foi feita com base nos seguintes fatores:
+- Permitir a entrega de incrementos funcionais ao longo do desenvolvimento, garantindo que o sistema possa ser testado e validado continuamente.
+- Facilitar a adaptação a mudanças de requisitos, já que cada incremento é avaliado e ajustado antes do próximo.
+- Reduzir riscos, abordando partes menores e mais gerenciáveis do sistema em cada iteração.
+- Garantir que cada entrega agregue valor incremental ao sistema e ao usuário final.
 
 ### Etapas e Atividades
 1. **Planejamento**:
