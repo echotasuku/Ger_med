@@ -91,6 +91,3 @@ O modelo escolhido será o **Iterativo Incremental**. Essa escolha foi feita com
 1. Criar, listar, atualizar e excluir categorias, permitindo a organização eficiente de medicamentos.
 2. Registrar, consultar e atualizar informações de fornecedores, garantindo rastreabilidade e controle.
 
----
-
-Este documento reflete o planejamento detalhado do sistema, incluindo escopo, papéis, atividades, e uma abordagem clara para a gestão de mudanças e a prova de conceito.
