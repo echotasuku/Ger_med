@@ -20,9 +20,14 @@ O sistema de gestão de medicamentos visa melhorar o controle e a organização 
 O sistema é destinado a farmacêuticos e funcionários administrativos de UBS, oferecendo funcionalidades e permissões específicas de acordo com suas responsabilidades.
 
 ### Cenário de Validação
-Para validar esta entrega, será demonstrado o funcionamento dos módulos de **CRUD para Categorias e Fornecedores**:
+Para validar esta entrega, será demonstrado o funcionamento dos módulos de **CRUD para Categorias, Fornecedores e Medicamentos**:
+
 - **Categorias**: Permitirão a classificação dos medicamentos de forma organizada, separando-os por tipo, uso ou outros critérios relevantes. Essa funcionalidade facilita a organização do estoque e a localização de medicamentos em consultas ou retiradas.
-- **Fornecedores**: Permitirão gerenciar informações detalhadas dos parceiros que fornecem medicamentos e insumos, registrando dados de contato, histórico de fornecimento e reputação.
+
+- **Fornecedores**: Permitirão gerenciar informações detalhadas dos parceiros que fornecem medicamentos e insumos, registrando dados de contato, histórico de fornecimento e reputação. Essa funcionalidade garante rastreabilidade e uma gestão eficiente das relações comerciais.
+
+- **Medicamentos**: Permitirão o registro de medicamentos com informações como nome, descrição, validade, categoria e fornecedor associado. Essa funcionalidade é essencial para garantir a rastreabilidade e o controle das características dos medicamentos cadastrados.
+
 
 ---
 
