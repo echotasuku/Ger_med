@@ -1,35 +1,42 @@
 # Planejamento do Sistema de Gestão de Medicamentos
 
-## 1. Contexto do Projeto (Escopo)
+# Contexto do Projeto (Escopo)
 
-### Descrição do Produto
-O sistema de gestão de medicamentos visa melhorar o controle e a organização de estoque de medicamentos em Unidades Básicas de Saúde (UBS). O principal problema a ser resolvido é a falta de um controle eficiente para garantir a rastreabilidade de medicamentos, gestão de estoque, validade dos produtos e documentação de retiradas baseadas em receitas.
+## Descrição do Produto
+O sistema de gestão de medicamentos tem como objetivo principal melhorar o controle e a organização do estoque de medicamentos em Unidades Básicas de Saúde (UBS). Ele resolve problemas relacionados à rastreabilidade de medicamentos, controle de validade, gestão de fornecedores e registro de retiradas de medicamentos com base em receitas médicas.
 
-### Escopo
-- **Incluso**:
-  - **Cadastro de Medicamentos**: Registro com nome, descrição, quantidade, validade, categoria e fornecedor.
-  - **Controle de Estoque**: Monitoramento da quantidade disponível e alertas para medicamentos próximos da validade ou com estoque baixo.
-  - **Registro de Retiradas**: Rastreabilidade de medicamentos com base em receitas médicas.
+## Escopo do Sistema
 
-- **Não Incluso**:
-  - Funcionalidades mais avançadas de integração com outros sistemas de saúde.
-  - Relatórios personalizados de saúde pública.
-  - **Sistema para geração de arquivos PDF de receitas médicas**.
+### O que será desenvolvido:
+1. **Cadastro de Medicamentos**:
+   - Registro de medicamentos com informações como nome, descrição, validade, categoria e fornecedor associado.
+2. **Cadastro de Categorias**:
+   - Classificação de medicamentos por tipo, uso ou outros critérios relevantes, permitindo organização prática e consultas rápidas.
+3. **Cadastro de Fornecedores**:
+   - Registro detalhado de fornecedores, incluindo informações de contato e histórico de fornecimento.
+4. **Controle de Estoque**:
+   - Monitoramento da validade dos medicamentos e alertas para produtos próximos ao vencimento.
+5. **Registro de Retiradas**:
+   - Documentação de retiradas de medicamentos, garantindo rastreabilidade com base em receitas médicas.
 
-### Público-Alvo
-O sistema é destinado a farmacêuticos e funcionários administrativos de UBS, oferecendo funcionalidades e permissões específicas de acordo com suas responsabilidades.
+### O que não será desenvolvido:
+1. Funcionalidades avançadas, como:
+   - Integração com sistemas externos de saúde.
+   - Geração de relatórios personalizados.
+   - Sistema para criação de arquivos PDF de receitas médicas.
 
-### Cenário de Validação
-Para validar esta entrega, será demonstrado o funcionamento dos módulos de **CRUD para Categorias, Fornecedores e Medicamentos**:
+## Relevância
+O sistema foi projetado para atender às necessidades de farmacêuticos e funcionários administrativos de UBS, promovendo:
+- Melhor organização do estoque.
+- Redução de desperdícios com medicamentos vencidos.
+- Rastreabilidade confiável para auditorias ou controle interno.
+- Facilidade na gestão de informações de fornecedores e medicamentos.
 
-- **Categorias**: Permitirão a classificação dos medicamentos de forma organizada, separando-os por tipo, uso ou outros critérios relevantes. Essa funcionalidade facilita a organização do estoque e a localização de medicamentos em consultas ou retiradas.
-
-- **Fornecedores**: Permitirão gerenciar informações detalhadas dos parceiros que fornecem medicamentos e insumos, registrando dados de contato, histórico de fornecimento e reputação. Essa funcionalidade garante rastreabilidade e uma gestão eficiente das relações comerciais.
-
-- **Medicamentos**: Permitirão o registro de medicamentos com informações como nome, descrição, validade, categoria e fornecedor associado. Essa funcionalidade é essencial para garantir a rastreabilidade e o controle das características dos medicamentos cadastrados.
-
-
----
+## Cenário de Validação
+A validação desta entrega será feita por meio dos módulos de **CRUD para Categorias, Fornecedores e Medicamentos**:
+- **Categorias**: Garantirão a organização dos medicamentos, separando-os por critérios específicos e facilitando sua localização.
+- **Fornecedores**: Permitirão o registro e consulta de informações sobre parceiros responsáveis pelo fornecimento dos medicamentos.
+- **Medicamentos**: Possibilitarão o cadastro básico de medicamentos com detalhes como nome, descrição, validade, categoria e fornecedor associado.
 
 ## 2. Definição do Processo e Ciclo de Vida do Desenvolvimento
 
