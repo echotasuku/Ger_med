@@ -23,6 +23,7 @@ O sistema de gestão de medicamentos tem como objetivo principal melhorar o cont
 1. Funcionalidades avançadas, como:
    - Integração com sistemas externos de saúde.
    - Geração de relatórios personalizados.
+   - Integração com um software que gere pdf
      
 
 ## Relevância
