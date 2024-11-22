@@ -23,7 +23,7 @@ O sistema de gestão de medicamentos tem como objetivo principal melhorar o cont
 1. Funcionalidades avançadas, como:
    - Integração com sistemas externos de saúde.
    - Geração de relatórios personalizados.
-   - Sistema para criação de arquivos PDF de receitas médicas.
+     
 
 ## Relevância
 O sistema foi projetado para atender às necessidades de farmacêuticos e funcionários administrativos de UBS, promovendo:
@@ -31,6 +31,7 @@ O sistema foi projetado para atender às necessidades de farmacêuticos e funcio
 - Redução de desperdícios com medicamentos vencidos.
 - Rastreabilidade confiável para auditorias ou controle interno.
 - Facilidade na gestão de informações de fornecedores e medicamentos.
+  
 
 ## Cenário de Validação
 A validação desta entrega será feita por meio dos módulos de **CRUD para Categorias, Fornecedores e Medicamentos**:
