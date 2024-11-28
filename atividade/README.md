@@ -94,7 +94,7 @@ Para organizar o desenvolvimento e acompanhar as alterações no sistema, utiliz
    - As tarefas serão organizadas em um quadro Kanban simples, com colunas como "A Fazer", "Em Andamento" e "Concluído". Isso ajudará no acompanhamento do progresso e na priorização das entregas.
 
 3. **Documentação Simples**:
-   - Decisões e alterações importantes serão registradas no repositório (README ou Wiki), para que a equipe tenha clareza sobre o que foi implementado e o que ainda precisa ser feito.
+   - Decisões e alterações importantes serão registradas no repositório (README), para que a equipe tenha clareza sobre o que foi implementado e o que ainda precisa ser feito.
 
 Essas práticas garantem que o desenvolvimento seja organizado e que o sistema evolua de maneira controlada.
 
