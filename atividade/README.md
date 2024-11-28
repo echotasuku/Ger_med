@@ -85,24 +85,35 @@ O modelo escolhido será o **Iterativo Incremental**. Essa escolha foi feita com
 
 ## 3. Gestão de Mudanças e Evolução do Projeto
 
-### Abordagem para Controle de Mudanças
-- **Ferramenta de Controle de Versão**: O Git será utilizado para rastrear alterações no código, com branches específicas para funcionalidades.
-- **Planejamento e Monitoramento**: O GitHub Projects será usado para organizar tarefas em quadros Kanban com colunas "A Fazer", "Em Andamento" e "Concluído".
-- **Registro de Decisões**: Todas as alterações e decisões serão documentadas no repositório (README ou Wiki), garantindo rastreabilidade e justificativa para mudanças realizadas.
+Para organizar o desenvolvimento e acompanhar as alterações no sistema, utilizaremos:
+
+1. **Git para Controle de Versão**:
+   - Todas as alterações serão versionadas com commits regulares, organizados em branches específicas para cada funcionalidade. Isso permitirá rastrear o que foi feito e manter o histórico do projeto.
+
+2. **GitHub Projects para Planejamento**:
+   - As tarefas serão organizadas em um quadro Kanban simples, com colunas como "A Fazer", "Em Andamento" e "Concluído". Isso ajudará no acompanhamento do progresso e na priorização das entregas.
+
+3. **Documentação Simples**:
+   - Decisões e alterações importantes serão registradas no repositório (README ou Wiki), para que a equipe tenha clareza sobre o que foi implementado e o que ainda precisa ser feito.
+
+Essas práticas garantem que o desenvolvimento seja organizado e que o sistema evolua de maneira controlada.
 
 ---
 
-## 4. Prova de Conceito
+## Prova de Conceito
 
-### Configuração de Dependências e Controle de Versão
-- **Composer**: Usado para gerenciar dependências do Laravel.
-- **Git**: Configurado com commits regulares para rastrear alterações no código.
+Nesta etapa inicial, focaremos na implementação de funcionalidades básicas, essenciais para validar o funcionamento do sistema. Serão desenvolvidos dois CRUDs:
 
-### Desenvolvimento dos CRUDs
-- Implementação dos CRUDs de **Categorias** e **Fornecedores**.
-- Cada operação (`Create`, `Read`, `Update`, `Delete`) será realizada por meio de rotas específicas no Laravel.
+1. **CRUD de Categorias**:
+   - Permite criar, listar, atualizar e excluir categorias de medicamentos. Isso é fundamental para organizar o estoque e facilitar a localização de medicamentos.
 
-### Fluxo Básico da Prova de Conceito
-1. Criar, listar, atualizar e excluir categorias, permitindo a organização eficiente de medicamentos.
-2. Registrar, consultar e atualizar informações de fornecedores, garantindo rastreabilidade e controle.
+2. **CRUD de Fornecedores**:
+   - Permite registrar e consultar informações básicas dos fornecedores, como nome e contato. Essa funcionalidade assegura o controle dos parceiros responsáveis pelo fornecimento dos medicamentos.
+
+
+### Validação
+A prova de conceito será considerada bem-sucedida se:
+- As operações de criação, leitura, atualização e exclusão em ambos os módulos funcionarem corretamente.
+- O sistema apresentar organização e clareza, com as tabelas funcionando de maneira integrada ao banco de dados.
+
 
