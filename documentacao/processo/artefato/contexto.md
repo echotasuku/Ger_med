@@ -11,8 +11,7 @@
 
 **Utilidade:**  
 
-- Este artefato será utilizado como referência na criação das histórias de usuário, auxiliando no detalhamento das funcionalidades e no planejamento técnico do sistema.  
-- Também ajuda na priorização dos requisitos e na comunicação clara entre a equipe de desenvolvimento e os stakeholders.  
+- Este artefato será utilizado como referência na criação das histórias de usuário, auxiliando no detalhamento das funcionalidades e no planejamento do sistema.  
 
 **Instanciado:**  
 
