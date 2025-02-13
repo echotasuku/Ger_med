@@ -1,0 +1,115 @@
+name: CI/CD - Laravel & React
+
+on:
+  push:
+    branches:
+      - main
+      - master  # Agora só roda testes quando houver push na main ou master
+  pull_request:
+    branches:
+      - main
+      - master  # Roda os testes antes de integrar qualquer código na main ou master
+
+jobs:
+  # 🔹 JOB 1: Testes no backend (Laravel)
+  backend-tests:
+    runs-on: ubuntu-latest
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: 2123
+          MYSQL_DATABASE: ger_est_test
+        options: --health-cmd="mysqladmin ping --silent"
+        ports:
+          - 3306:3306
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Configurar PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Instalar dependências do Laravel
+        run: composer install --no-progress --no-suggest
+
+      - name: Configurar ambiente
+        run: cp .env.example .env
+
+      - name: Gerar chave da aplicação
+        run: php artisan key:generate
+
+      - name: Rodar migrações
+        run: php artisan migrate --force
+
+      - name: Rodar testes unitários (PHPUnit)
+        run: vendor/bin/phpunit
+
+  # 🔹 JOB 2: Testes automatizados com Laravel Dusk
+  dusk-tests:
+    runs-on: ubuntu-latest
+    needs: backend-tests  # Só roda Dusk depois que os testes unitários passaram
+
+    services:
+      mysql:
+        image: mysql:8.0
+        env:
+          MYSQL_ROOT_PASSWORD: 2123
+          MYSQL_DATABASE: ger_est_test
+        options: --health-cmd="mysqladmin ping --silent"
+        ports:
+          - 3306:3306
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Configurar PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.2'
+
+      - name: Instalar dependências do Laravel
+        run: composer install --no-progress --no-suggest
+
+      - name: Configurar ambiente
+        run: cp .env.example .env
+
+      - name: Gerar chave da aplicação
+        run: php artisan key:generate
+
+      - name: Rodar migrações
+        run: php artisan migrate --force
+
+      - name: Instalar Dusk
+        run: php artisan dusk:install
+
+      - name: Rodar testes do Laravel Dusk
+        env:
+          APP_URL: http://127.0.0.1:8000
+        run: php artisan dusk
+
+  # 🔹 JOB 3: Testes no frontend (React)
+  frontend-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v3
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '21'
+
+      - name: Instalar dependências do React
+        run: npm install
+        working-directory: frontend2/germedfrontend  # Ajuste se necessário
+
+      - name: Rodar testes do frontend (Jest)
+        run: npm test -- --watchAll=false
+        working-directory: frontend2/germedfrontend  # Ajuste se necessário

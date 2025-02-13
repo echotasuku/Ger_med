@@ -23,7 +23,8 @@ use App\Http\Controllers\FarmaceuticoController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
-//Route::get('/consultar-cep/{cep}', [FornecedorController::class, 'consultarCep']);
+
+Route::get('/consultar-cep/{cep}', [FornecedorController::class, 'consultarCep']);
 Route::apiResource('fornecedores', FornecedorController::class);
 Route::apiResource('categorias', CategoriaController::class);
 Route::apiResource('medicamentos', MedicamentoController::class);

@@ -1,0 +1,51 @@
+version: '3.8'
+
+services:
+  laravel-app:
+    build:
+      context: ./backend  # Ajuste o caminho se necessário
+    container_name: laravel-backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/var/www
+    environment:
+      APP_ENV: local
+      DB_CONNECTION: mysql
+      DB_HOST: mysql
+      DB_PORT: 3306
+      DB_DATABASE: ger_est_test
+      DB_USERNAME: root
+      DB_PASSWORD: 2123
+    command: php artisan serve --host=0.0.0.0 --port=8000
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql-container
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: 2123
+      MYSQL_DATABASE: ger_est_test
+    ports:
+      - "3306:3306"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: mysql
+      MYSQL_ROOT_PASSWORD: 2123
+    ports:
+      - "8080:80"
+
+  react-frontend:
+    build:
+      context: ./frontend2/germedfrontend  # Certifique-se de apontar para a pasta correta
+    container_name: react-frontend
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./frontend2/germedfrontend:/app
+    environment:
+      - CHOKIDAR_USEPOLLING=true

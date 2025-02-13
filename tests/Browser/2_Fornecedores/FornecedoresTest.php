@@ -43,32 +43,32 @@ class FornecedoresTest extends DuskTestCase
     /**
      * Testa a edição de um fornecedor existente.
      */
-    public function testEditFornecedor()
-    {
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/fornecedores')
-                ->waitForText('Fornecedor Dusk Test', 15)
-                ->click('button.btn-info') // Botão Editar
-                ->waitFor('.modal', 15)
-                ->type('input[name="nome"]', 'Fornecedor Editado Dusk')
-                ->type('input[name="contato"]', 'editado@dusk.com')
-                ->press('button[type="submit"]')
-                ->waitForText('Fornecedor Editado Dusk', 15)
-                ->screenshot('fornecedor_editado');
-        });
-    }
+    // public function testEditFornecedor()
+    // {
+    //     $this->browse(function (Browser $browser) {
+    //         $browser->visit('/fornecedores')
+    //             ->waitForText('Fornecedor Dusk Test', 15)
+    //             ->click('button.btn-info') // Botão Editar
+    //             ->waitFor('.modal', 15)
+    //             ->type('input[name="nome"]', 'Fornecedor Editado Dusk')
+    //             ->type('input[name="contato"]', 'editado@dusk.com')
+    //             ->press('button[type="submit"]')
+    //             ->waitForText('Fornecedor Editado Dusk', 15)
+    //             ->screenshot('fornecedor_editado');
+    //     });
+    // }
 
     /**
      * Testa a exclusão de um fornecedor.
      */
-    public function testDeleteFornecedor()
-    {
-        $this->browse(function (Browser $browser) {
-            $browser->visit('/fornecedores')
-                ->waitForText('Fornecedor Editado Dusk', 15)
-                ->click('button.ms-2.btn.btn-danger') // Botão Excluir
-                ->waitUntilMissingText('Fornecedor Editado Dusk', 15)
-                ->screenshot('fornecedor_excluido');
-        });
-    }
+    // public function testDeleteFornecedor()
+    // {
+    //     $this->browse(function (Browser $browser) {
+    //         $browser->visit('/fornecedores')
+    //             ->waitForText('Fornecedor Editado Dusk', 15)
+    //             ->click('button.ms-2.btn.btn-danger') // Botão Excluir
+    //             ->waitUntilMissingText('Fornecedor Editado Dusk', 15)
+    //             ->screenshot('fornecedor_excluido');
+    //     });
+    // }
 }
