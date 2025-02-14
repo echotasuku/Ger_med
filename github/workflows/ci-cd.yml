@@ -16,17 +16,20 @@ jobs:
     runs-on: ubuntu-latest
 
     services:
-      mysql:
-        image: mysql:8.0
-        env:
-          MYSQL_ROOT_PASSWORD: 2123
-          MYSQL_DATABASE: ger_est_test
-          MYSQL_USER: root
-          MYSQL_PASSWORD: 2123  # ⬅️ Agora garante que a senha está correta
-          MYSQL_ALLOW_EMPTY_PASSWORD: no  
-        options: --health-cmd="mysqladmin ping --silent"
-        ports:
-          - 3306:3306
+
+     services:
+  mysql:
+    image: mysql:8.0
+    env:
+      MYSQL_ROOT_PASSWORD: 2123
+      MYSQL_DATABASE: ger_est_test
+      MYSQL_USER: root
+      MYSQL_PASSWORD: 2123  # ⬅️ Certifique-se de que isso está correto
+      MYSQL_ALLOW_EMPTY_PASSWORD: no  # ⬅️ Não permite conexões sem senha
+    options: --health-cmd="mysqladmin ping --silent"
+    ports:
+      - 3306:3306
+
 
     steps:
       - name: Checkout código
@@ -40,8 +43,8 @@ jobs:
       - name: Instalar dependências do Laravel
         run: composer install --no-progress --no-suggest --prefer-dist
 
-      - name: Configurar ambiente (.env)
-         run: 
+     - name: Configurar ambiente (.env)
+  run: |
     echo "APP_ENV=testing" > .env
     echo "APP_KEY=$(php artisan key:generate --show)" >> .env
     echo "APP_DEBUG=true" >> .env
@@ -49,13 +52,14 @@ jobs:
     echo "LOG_CHANNEL=stack" >> .env
     echo "LOG_LEVEL=debug" >> .env
     echo "DB_CONNECTION=mysql" >> .env
-    echo "DB_HOST=127.0.0.1" >> .env  # ⬅️ Esse HOST precisa ser 127.0.0.1 dentro do Actions
+    echo "DB_HOST=127.0.0.1" >> .env  # ⬅️ Garantindo que Laravel se conecta no MySQL certo
     echo "DB_PORT=3306" >> .env
     echo "DB_DATABASE=ger_est_test" >> .env
     echo "DB_USERNAME=root" >> .env
-    echo "DB_PASSWORD=2123" >> .env  # ⬅️ Garante que Laravel pega a senha correta
+    echo "DB_PASSWORD=2123" >> .env  # ⬅️ Laravel agora terá a senha certa!
     echo "SESSION_DRIVER=array" >> .env
     echo "CACHE_DRIVER=array" >> .env
+
 
 
       - name: Rodar migrações
