@@ -5,7 +5,6 @@ namespace Tests;
 use Facebook\WebDriver\Chrome\ChromeOptions;
 use Facebook\WebDriver\Remote\DesiredCapabilities;
 use Facebook\WebDriver\Remote\RemoteWebDriver;
-use Illuminate\Support\Collection;
 use Laravel\Dusk\TestCase as BaseTestCase;
 use PHPUnit\Framework\Attributes\BeforeClass;
 
@@ -20,7 +19,14 @@ abstract class DuskTestCase extends BaseTestCase
     public static function prepare(): void
     {
         if (! static::runningInSail()) {
-            static::startChromeDriver(['--port=56709']);
+            static::startChromeDriver([
+                '--port=56709',
+                '--disable-dev-shm-usage',
+                '--no-sandbox', // Necessário para execução em containers, como no GitHub Actions
+                '--disable-gpu', // Necessário em alguns ambientes como CI
+                '--headless', // Certifique-se de que o Chrome está rodando em headless (opcional)
+                '--user-data-dir=/tmp/dusk-user-data-dir', // Diretório único para os dados do usuário
+            ]);
         }
     }
 
@@ -33,7 +39,8 @@ abstract class DuskTestCase extends BaseTestCase
             $this->shouldStartMaximized() ? '--start-maximized' : '--window-size=1920,1080',
             '--disable-search-engine-choice-screen',
             '--disable-gpu',
-            // Remova ou comente o argumento "--headless"
+            '--headless', // Deixe o Chrome rodando em modo headless
+            '--user-data-dir=/tmp/dusk-user-data-dir', // Diretório único para os dados do usuário
         ])->all());
 
         return RemoteWebDriver::create(
