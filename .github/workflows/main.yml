@@ -21,6 +21,8 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: 2123
           MYSQL_DATABASE: ger_est_test
+          MYSQL_USER: root
+          MYSQL_PASSWORD: 2123  # ⬅️ Agora garante que a senha está correta
         options: --health-cmd="mysqladmin ping --silent"
         ports:
           - 3306:3306
@@ -35,13 +37,18 @@ jobs:
           php-version: '8.2'
 
       - name: Instalar dependências do Laravel
-        run: composer install --no-progress --no-suggest
+        run: composer install --no-progress --no-suggest --prefer-dist
 
-      - name: Configurar ambiente
-        run: cp .env.example .env
-
-      - name: Gerar chave da aplicação
-        run: php artisan key:generate
+      - name: Configurar ambiente (.env)
+        run: |
+          echo "APP_ENV=testing" > .env
+          echo "APP_KEY=$(php artisan key:generate --show)" >> .env
+          echo "DB_CONNECTION=mysql" >> .env
+          echo "DB_HOST=127.0.0.1" >> .env
+          echo "DB_PORT=3306" >> .env
+          echo "DB_DATABASE=ger_est_test" >> .env
+          echo "DB_USERNAME=root" >> .env
+          echo "DB_PASSWORD=2123" >> .env
 
       - name: Rodar migrações
         run: php artisan migrate --force
@@ -60,6 +67,8 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: 2123
           MYSQL_DATABASE: ger_est_test
+          MYSQL_USER: root
+          MYSQL_PASSWORD: 2123  # ⬅️ Adicionando usuário e senha novamente
         options: --health-cmd="mysqladmin ping --silent"
         ports:
           - 3306:3306
@@ -74,13 +83,18 @@ jobs:
           php-version: '8.2'
 
       - name: Instalar dependências do Laravel
-        run: composer install --no-progress --no-suggest
+        run: composer install --no-progress --no-suggest --prefer-dist
 
-      - name: Configurar ambiente
-        run: cp .env.example .env
-
-      - name: Gerar chave da aplicação
-        run: php artisan key:generate
+      - name: Configurar ambiente (.env)
+        run: |
+          echo "APP_ENV=testing" > .env
+          echo "APP_KEY=$(php artisan key:generate --show)" >> .env
+          echo "DB_CONNECTION=mysql" >> .env
+          echo "DB_HOST=127.0.0.1" >> .env
+          echo "DB_PORT=3306" >> .env
+          echo "DB_DATABASE=ger_est_test" >> .env
+          echo "DB_USERNAME=root" >> .env
+          echo "DB_PASSWORD=2123" >> .env
 
       - name: Rodar migrações
         run: php artisan migrate --force
