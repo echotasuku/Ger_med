@@ -26,12 +26,6 @@ jobs:
           --health-retries=3
 
     steps:
-      - name: Limpar cache
-        run: |
-          php artisan config:clear
-          php artisan cache:clear
-          composer dump-autoload
-
       - name: Checkout código
         uses: actions/checkout@v4
 
@@ -63,11 +57,21 @@ jobs:
             sleep 2
           done
 
+      - name: Limpar cache
+        run: |
+          cd /home/runner/work/SEU_REPOSITORIO/SEU_REPOSITORIO # Garanta que você está no diretório correto
+          php artisan config:clear
+          php artisan cache:clear
+          composer dump-autoload
+
       - name: Rodar migrations
-        run: php artisan migrate --force
+        run: |
+          cd /home/runner/work/SEU_REPOSITORIO/SEU_REPOSITORIO # Garanta que você está no diretório correto
+          php artisan migrate --force
 
       - name: Instalar Dusk e configurar navegador
         run: |
+          cd /home/runner/work/SEU_REPOSITORIO/SEU_REPOSITORIO # Garanta que você está no diretório correto
           php artisan dusk:install
           php artisan dusk:chrome-driver --detect
           echo "APP_URL=http://localhost" >> .env
@@ -76,9 +80,10 @@ jobs:
           Xvfb :99 -screen 0 1280x1024x16 &  # Inicia um servidor X virtual (para headless)
           php artisan serve --no-interaction &
 
-
       - name: Rodar testes do Laravel Dusk
-        run: php artisan dusk
+        run: |
+          cd /home/runner/work/SEU_REPOSITORIO/SEU_REPOSITORIO # Garanta que você está no diretório correto
+          php artisan dusk
 
   frontend-tests:
     runs-on: ubuntu-latest
@@ -97,4 +102,3 @@ jobs:
 
       - name: Rodar testes do React
         run: cd frontend && npm test -- --watchAll=false
-
