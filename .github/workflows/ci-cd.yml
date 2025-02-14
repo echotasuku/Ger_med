@@ -3,13 +3,12 @@ name: CI/CD - Laravel & React
 on:
   push:
     branches:
-      - dev  # Agora só roda testes quando houver push na dev
+      - dev
   pull_request:
     branches:
-      - dev  # Roda os testes antes de integrar qualquer código na dev
+      - dev
 
 jobs:
-  # 🔹 JOB 1: Testes no backend (Laravel)
   backend-tests:
     runs-on: ubuntu-latest
 
@@ -19,7 +18,13 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: 2123
           MYSQL_DATABASE: ger_est_test
-        options: --health-cmd="mysqladmin ping --silent"
+          MYSQL_USER: root
+          MYSQL_PASSWORD: 2123
+        options: >-
+          --health-cmd "mysqladmin ping -p2123"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
         ports:
           - 3306:3306
 
@@ -31,21 +36,32 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
+          extensions: mysql, mbstring, xml
 
-      - name: Instalar dependências do Laravel
+      - name: Instalar dependências
         run: composer install --no-progress --no-suggest
 
       - name: Configurar ambiente
-        run: cp .env.example .env
+        run: |
+          cp .env.example .env
+          echo "DB_HOST=127.0.0.1" >> .env
+          echo "DB_DATABASE=ger_est_test" >> .env
+          echo "DB_USERNAME=root" >> .env
+          echo "DB_PASSWORD=2123" >> .env
 
-      - name: Gerar chave da aplicação
+      - name: Gerar chave
         run: php artisan key:generate
+
+      - name: Esperar MySQL ficar pronto
+        run: sleep 30  # Espera inicial para garantir que o MySQL iniciou
 
       - name: Rodar migrações
         run: php artisan migrate --force
 
-      - name: Rodar testes unitários (PHPUnit)
+      - name: Rodar testes
         run: vendor/bin/phpunit
+
+  # ... (mantenha os outros jobs como estão)
 
   # 🔹 JOB 2: Testes automatizados com Laravel Dusk
   dusk-tests:
