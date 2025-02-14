@@ -23,6 +23,7 @@ jobs:
           MYSQL_DATABASE: ger_est_test
           MYSQL_USER: root
           MYSQL_PASSWORD: 2123  # ⬅️ Agora garante que a senha está correta
+          MYSQL_ALLOW_EMPTY_PASSWORD: no 
         options: --health-cmd="mysqladmin ping --silent"
         ports:
           - 3306:3306
