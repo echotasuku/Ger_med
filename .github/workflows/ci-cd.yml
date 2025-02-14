@@ -2,11 +2,9 @@ name: CI/CD - Laravel & React
 
 on:
   push:
-    branches:
-      - dev
+    branches: [dev]
   pull_request:
-    branches:
-      - dev
+    branches: [dev]
 
 jobs:
   backend-tests:
@@ -20,13 +18,12 @@ jobs:
           MYSQL_DATABASE: ger_est_test
           MYSQL_USER: root
           MYSQL_PASSWORD: 2123
-        options: >-
+        options: 
           --health-cmd "mysqladmin ping -p2123"
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
-        ports:
-          - 3306:3306
+        ports: [3306:3306]
 
     steps:
       - name: Checkout código
@@ -36,15 +33,16 @@ jobs:
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
-          extensions: mysql, mbstring, xml
+          extensions: mysql, pdo, mbstring, xml, ctype, tokenizer
 
       - name: Instalar dependências
-        run: composer install --no-progress --no-suggest
+        run: composer install --no-interaction --prefer-dist
 
       - name: Configurar ambiente
         run: |
           cp .env.example .env
           echo "DB_HOST=127.0.0.1" >> .env
+          echo "DB_PORT=3306" >> .env
           echo "DB_DATABASE=ger_est_test" >> .env
           echo "DB_USERNAME=root" >> .env
           echo "DB_PASSWORD=2123" >> .env
@@ -53,20 +51,23 @@ jobs:
         run: php artisan key:generate
 
       - name: Esperar MySQL ficar pronto
-        run: sleep 30  # Espera inicial para garantir que o MySQL iniciou
+        run: |
+          for i in {1..10}; do
+            nc -zv 127.0.0.1 3306 && exit 0
+            sleep 5
+          done
+          exit 1
 
-      - name: Rodar migrações
-        run: php artisan migrate --force
+      - name: Executar migrações
+        run: php artisan migrate --force --seed
 
       - name: Rodar testes
-        run: vendor/bin/phpunit
+        run: php artisan test
 
-  # ... (mantenha os outros jobs como estão)
-
-  # 🔹 JOB 2: Testes automatizados com Laravel Dusk
   dusk-tests:
     runs-on: ubuntu-latest
-    needs: backend-tests  # Só roda Dusk depois que os testes unitários passaram
+    needs: backend-tests
+    timeout-minutes: 15  # Dusk geralmente precisa de mais tempo
 
     services:
       mysql:
@@ -74,56 +75,63 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: 2123
           MYSQL_DATABASE: ger_est_test
-        options: --health-cmd="mysqladmin ping --silent"
-        ports:
-          - 3306:3306
+        options: --health-cmd="mysqladmin ping -p2123"
+        ports: [3306:3306]
+
+      chrome:
+        image: selenium/standalone-chrome:latest
+        ports: [4444:4444]
 
     steps:
-      - name: Checkout código
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
       - name: Configurar PHP
         uses: shivammathur/setup-php@v2
         with:
           php-version: '8.2'
+          extensions: mysql, gd, mbstring
 
-      - name: Instalar dependências do Laravel
-        run: composer install --no-progress --no-suggest
+      - name: Instalar dependências
+        run: |
+          composer install --no-interaction
+          npm install --prefix frontend2/germedfrontend
 
       - name: Configurar ambiente
-        run: cp .env.example .env
+        run: |
+          cp .env.example .env
+          echo "APP_URL=http://localhost" >> .env
+          echo "DB_HOST=127.0.0.1" >> .env
+          echo "DB_DATABASE=ger_est_test" >> .env
+          echo "DB_USERNAME=root" >> .env
+          echo "DB_PASSWORD=2123" >> .env
 
-      - name: Gerar chave da aplicação
-        run: php artisan key:generate
-
-      - name: Rodar migrações
-        run: php artisan migrate --force
-
-      - name: Instalar Dusk
-        run: php artisan dusk:install
-
-      - name: Rodar testes do Laravel Dusk
-        env:
-          APP_URL: http://127.0.0.1:8000
+      - name: Iniciar servidor em background
+        run: php artisan serve --port=8000 > /dev/null 2>&1 &
+      
+      - name: Rodar Dusk
         run: php artisan dusk
+        env:
+          APP_URL: http://localhost:8000
 
-  # 🔹 JOB 3: Testes no frontend (React)
   frontend-tests:
     runs-on: ubuntu-latest
+    needs: backend-tests  # Opcional: dependência do backend
 
     steps:
-      - name: Checkout código
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Configurar Node.js
+      - name: Usar Node.js 21
         uses: actions/setup-node@v3
         with:
-          node-version: '21'
+          node-version: 21
+          cache: 'npm'
 
-      - name: Instalar dependências do React
+      - name: Instalar dependências
         run: npm install
-        working-directory: frontend2/germedfrontend  # Ajuste se necessário
+        working-directory: frontend2/germedfrontend
 
-      - name: Rodar testes do frontend (Jest)
-        run: npm test -- --watchAll=false
-        working-directory: frontend2/germedfrontend  # Ajuste se necessário
+      - name: Rodar testes
+        run: npm test -- --watchAll=false --ci
+        working-directory: frontend2/germedfrontend
+        env:
+          CI: true
