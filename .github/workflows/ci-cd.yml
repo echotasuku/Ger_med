@@ -19,9 +19,6 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: 2123
           MYSQL_DATABASE: ger_est_test
-          MYSQL_USER: root
-          MYSQL_PASSWORD: 2123  # ⬅️ Certifique-se de que isso está correto
-          MYSQL_ALLOW_EMPTY_PASSWORD: "no" # ⬅️ Garante que senha é exigida
         options: --health-cmd="mysqladmin ping --silent"
         ports:
           - 3306:3306
@@ -36,24 +33,13 @@ jobs:
           php-version: '8.2'
 
       - name: Instalar dependências do Laravel
-        run: composer install --no-progress --no-suggest --prefer-dist
+        run: composer install --no-progress --no-suggest
 
-      - name: Configurar ambiente (.env)
-        run: |
-          echo "APP_ENV=testing" > .env
-          echo "APP_KEY=$(php artisan key:generate --show)" >> .env
-          echo "APP_DEBUG=true" >> .env
-          echo "APP_URL=http://localhost:8000" >> .env
-          echo "LOG_CHANNEL=stack" >> .env
-          echo "LOG_LEVEL=debug" >> .env
-          echo "DB_CONNECTION=mysql" >> .env
-          echo "DB_HOST=mysql" >> .env  # ⬅️ Garantindo que Laravel se conecta no MySQL certo
-          echo "DB_PORT=3306" >> .env
-          echo "DB_DATABASE=ger_est_test" >> .env
-          echo "DB_USERNAME=root" >> .env
-          echo "DB_PASSWORD=2123" >> .env  # ⬅️ Laravel agora terá a senha certa!
-          echo "SESSION_DRIVER=array" >> .env
-          echo "CACHE_DRIVER=array" >> .env
+      - name: Configurar ambiente
+        run: cp .env.example .env
+
+      - name: Gerar chave da aplicação
+        run: php artisan key:generate
 
       - name: Rodar migrações
         run: php artisan migrate --force
@@ -86,18 +72,13 @@ jobs:
           php-version: '8.2'
 
       - name: Instalar dependências do Laravel
-        run: composer install --no-progress --no-suggest --prefer-dist
+        run: composer install --no-progress --no-suggest
 
-      - name: Configurar ambiente (.env)
-        run: |
-          echo "APP_ENV=testing" > .env
-          echo "APP_KEY=$(php artisan key:generate --show)" >> .env
-          echo "DB_CONNECTION=mysql" >> .env
-          echo "DB_HOST=mysql" >> .env  # ⬅️ Mantendo `mysql` como host correto
-          echo "DB_PORT=3306" >> .env
-          echo "DB_DATABASE=ger_est_test" >> .env
-          echo "DB_USERNAME=root" >> .env
-          echo "DB_PASSWORD=2123" >> .env
+      - name: Configurar ambiente
+        run: cp .env.example .env
+
+      - name: Gerar chave da aplicação
+        run: php artisan key:generate
 
       - name: Rodar migrações
         run: php artisan migrate --force
