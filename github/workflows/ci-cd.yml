@@ -63,7 +63,7 @@ jobs:
 
 
       - name: Rodar migrações
-        run: php artisan migrate --force
+        run: php artisan migrate
 
       - name: Rodar testes unitários (PHPUnit)
         run: vendor/bin/phpunit
