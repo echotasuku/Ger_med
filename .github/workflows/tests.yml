@@ -1,0 +1,75 @@
+name: Run Tests
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main, develop]
+
+jobs:
+  backend-tests:
+    runs-on: ubuntu-latest
+    services:
+      mysql:
+        image: mysql:8
+        env:
+          MYSQL_ROOT_PASSWORD: root
+          MYSQL_DATABASE: test_db
+          MYSQL_USER: user
+          MYSQL_PASSWORD: password
+        ports:
+          - 3306:3306
+        options: >-
+          --health-cmd="mysqladmin ping --host=127.0.0.1 --user=root --password=root"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=3
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Configurar PHP
+        uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.2
+          extensions: mbstring, bcmath, pdo_mysql
+          tools: composer
+
+      - name: Instalar dependências do Laravel
+        run: composer install --no-progress --prefer-dist --optimize-autoloader
+
+      - name: Criar arquivo .env
+        run: |
+          cp .env.example .env
+          php artisan key:generate
+
+      - name: Rodar migrations
+        run: php artisan migrate --force
+
+      - name: Instalar Dusk e configurar navegador
+        run: |
+          php artisan dusk:install
+          php artisan dusk:chrome-driver --detect
+          php artisan serve --no-interaction &
+
+      - name: Rodar testes do Laravel Dusk
+        run: php artisan dusk
+
+  frontend-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Instalar dependências do React
+        run: cd frontend && npm install
+
+      - name: Rodar testes do React
+        run: cd frontend && npm test -- --watchAll=false
