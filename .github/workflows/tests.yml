@@ -20,7 +20,7 @@ jobs:
         ports:
           - 3306:3306
         options: >-
-          --health-cmd="mysqladmin ping --host=127.0.0.1 --user=root --password=root"
+          --health-cmd="mysql --user=root --password=root --host=127.0.0.1 -e 'SHOW DATABASES;'"
           --health-interval=10s
           --health-timeout=5s
           --health-retries=3
@@ -42,7 +42,20 @@ jobs:
       - name: Criar arquivo .env
         run: |
           cp .env.example .env
+          echo "DB_CONNECTION=mysql" >> .env
+          echo "DB_HOST=127.0.0.1" >> .env
+          echo "DB_PORT=3306" >> .env
+          echo "DB_DATABASE=test_db" >> .env
+          echo "DB_USERNAME=user" >> .env
+          echo "DB_PASSWORD=password" >> .env
           php artisan key:generate
+
+      - name: Aguardar MySQL iniciar
+        run: |
+          while ! mysql --host=127.0.0.1 --user=root --password=root --silent -e 'SHOW DATABASES;'; do
+            echo "Aguardando MySQL..."
+            sleep 2
+          done
 
       - name: Rodar migrations
         run: php artisan migrate --force
@@ -73,3 +86,4 @@ jobs:
 
       - name: Rodar testes do React
         run: cd frontend && npm test -- --watchAll=false
+
