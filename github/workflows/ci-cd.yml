@@ -52,7 +52,7 @@ jobs:
     echo "LOG_CHANNEL=stack" >> .env
     echo "LOG_LEVEL=debug" >> .env
     echo "DB_CONNECTION=mysql" >> .env
-    echo "DB_HOST=127.0.0.1" >> .env  # ⬅️ Garantindo que Laravel se conecta no MySQL certo
+    echo "DB_HOST=mysql" >> .env  # ⬅️ Garantindo que Laravel se conecta no MySQL certo
     echo "DB_PORT=3306" >> .env
     echo "DB_DATABASE=ger_est_test" >> .env
     echo "DB_USERNAME=root" >> .env
