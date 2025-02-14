@@ -19,7 +19,7 @@ jobs:
         env:
           MYSQL_ROOT_PASSWORD: 2123
           MYSQL_DATABASE: ger_est_test
-          MYSQL_USER: laravel  # ⬅️ Criamos um usuário para evitar conflito com root
+          MYSQL_USER: laravel
           MYSQL_PASSWORD: laravel
         options: --health-cmd="mysqladmin ping --silent"
         ports:
@@ -40,17 +40,24 @@ jobs:
       - name: Configurar ambiente Laravel (.env)
         run: |
           cp .env.example .env
-          echo "DB_HOST=mysql" >> .env
+          echo "DB_CONNECTION=mysql" >> .env
+          echo "DB_HOST=mysql" >> .env  # ⬅️ Ajuste para garantir que Laravel encontre o MySQL
           echo "DB_PORT=3306" >> .env
           echo "DB_DATABASE=ger_est_test" >> .env
           echo "DB_USERNAME=laravel" >> .env
           echo "DB_PASSWORD=laravel" >> .env
 
-      - name: Gerar chave do Laravel
-        run: php artisan key:generate
+      - name: Aguardar MySQL iniciar (30s)
+        run: sleep 30  # ⬅️ Tempo extra para o MySQL iniciar
 
-      - name: Aguardar MySQL iniciar (15s)
-        run: sleep 15
+      - name: Testar conexão com MySQL antes das migrações
+        run: |
+          for i in {1..10}; do
+            mysql -h mysql -u laravel -plaravel -e "SHOW DATABASES;" && exit 0
+            echo "Aguardando MySQL iniciar..."
+            sleep 5
+          done
+          exit 1
 
       - name: Rodar migrações
         run: php artisan migrate --force
@@ -100,8 +107,17 @@ jobs:
           echo "DB_USERNAME=laravel" >> .env
           echo "DB_PASSWORD=laravel" >> .env
 
-      - name: Aguardar MySQL iniciar (15s)
-        run: sleep 15
+      - name: Aguardar MySQL iniciar (30s)
+        run: sleep 30
+
+      - name: Testar conexão com MySQL antes das migrações
+        run: |
+          for i in {1..10}; do
+            mysql -h mysql -u laravel -plaravel -e "SHOW DATABASES;" && exit 0
+            echo "Aguardando MySQL iniciar..."
+            sleep 5
+          done
+          exit 1
 
       - name: Rodar migrações
         run: php artisan migrate --force
