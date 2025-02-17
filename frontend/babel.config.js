@@ -1,5 +1,10 @@
 module.exports = {
-    presets: ["@babel/preset-env", "@babel/preset-react"],
-    plugins: ["@babel/plugin-proposal-private-property-in-object"]
+    presets: [
+      'react-app', // Preset usado pelo Create React App, que já inclui tudo o que você precisa
+    ],
+    plugins: [
+      '@babel/plugin-proposal-private-methods',  // Se necessário
+      '@babel/plugin-proposal-private-property-in-object',  // Se necessário
+    ],
   };
   
