@@ -98,7 +98,10 @@ jobs:
           node-version: 18
 
       - name: Instalar dependências do React
-        run: cd frontend && npm install
+        run: |
+          cd frontend
+          npm install
+          npm install --save-dev babel-jest @babel/preset-env @babel/preset-react @babel/plugin-proposal-private-property-in-object
 
       - name: Rodar testes do React
         run: cd frontend && npm test -- --watchAll=false
