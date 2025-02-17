@@ -101,7 +101,7 @@ jobs:
         run: |
           cd frontend
           npm install
-          npm install --save-dev babel-jest @babel/preset-env @babel/preset-react @babel/plugin-proposal-private-property-in-object
+          npm install --save-dev babel-jest @babel/preset-env @babel/preset-react @babel/plugin-proposal-private-methods @babel/plugin-proposal-private-property-in-object
 
       - name: Configurar Babel e Jest
         run: |
