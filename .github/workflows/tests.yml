@@ -83,6 +83,7 @@ jobs:
       - name: Rodar testes do Laravel Dusk
         run: |
           cd /home/runner/work/Ger_med/Ger_med # Garantindo que está no diretório correto
+          php artisan serve
           php artisan dusk
 
   frontend-tests:
