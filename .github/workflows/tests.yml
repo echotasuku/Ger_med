@@ -41,7 +41,8 @@ jobs:
           tools: composer
 
       - name: Instalar dependências do Laravel
-        run: composer install --no-progress --prefer-dist --optimize-autoloader
+        run: |
+          composer install --no-progress --prefer-dist --optimize-autoloader
 
       - name: Criar arquivo .env
         run: |
@@ -87,9 +88,6 @@ jobs:
         run: |
           php artisan serve --host=0.0.0.0 --port=8080 &  # Rodar servidor Laravel na porta 8080 em segundo plano
           sleep 5  # Espera o servidor subir
-
-      - name: Checkout código
-        uses: actions/checkout@v4
 
       - name: Instalar Node.js
         uses: actions/setup-node@v4
