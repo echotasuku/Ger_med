@@ -1,3 +1,15 @@
+name: Run Tests
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+  pull_request:
+    branches:
+      - main
+      - develop
+
 jobs:
   backend-tests:
     runs-on: ubuntu-latest
@@ -73,10 +85,58 @@ jobs:
 
       - name: Rodar servidor Laravel na porta 8080 em segundo plano
         run: |
-          php artisan serve --port=8080 &  # Rodar servidor Laravel na porta 8080 em segundo plano
+          php artisan serve --host=0.0.0.0 --port=8080 &  # Rodar servidor Laravel na porta 8080 em segundo plano
           sleep 5  # Espera o servidor subir
 
       - name: Rodar testes do Laravel Dusk
         run: |
           cd /home/runner/work/Ger_med/Ger_med # Garantindo que está no diretório correto
           php artisan dusk
+
+  frontend-tests:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+
+      - name: Instalar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Instalar dependências do React
+        run: |
+          cd frontend
+          npm install
+          npm install --save-dev babel-jest @babel/preset-env @babel/preset-react @babel/plugin-proposal-private-methods @babel/plugin-proposal-private-property-in-object
+
+      - name: Configurar Babel e Jest
+        run: |
+          cd frontend
+          echo 'module.exports = {
+            presets: [
+              "@babel/preset-env",
+              "@babel/preset-react"
+            ],
+            plugins: [
+              "@babel/plugin-proposal-private-methods",
+              "@babel/plugin-proposal-private-property-in-object"
+            ]
+          };' > babel.config.js
+
+          echo 'module.exports = {
+            transform: {
+              "^.+\\.(js|jsx)$": "babel-jest"
+            },
+            transformIgnorePatterns: [
+              "/node_modules/(?!axios)/"
+            ],
+            moduleNameMapper: {
+              "\\.(css|scss)$": "identity-obj-proxy"
+            },
+            testEnvironment: "jsdom"
+          };' > jest.config.js
+
+      - name: Rodar testes do React
+        run: cd frontend && npm test -- --watchAll=false
