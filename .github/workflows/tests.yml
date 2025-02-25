@@ -37,7 +37,10 @@ jobs:
           tools: composer
 
       - name: Instalar dependências do Laravel
-        run: composer install --no-progress --prefer-dist --optimize-autoloader
+        run: |
+          cd codificacao/backend
+          composer install --no-progress --prefer-dist --optimize-autoloader
+
 
       - name: Criar arquivo .env
         run: |
@@ -59,19 +62,19 @@ jobs:
 
       - name: Limpar cache
         run: |
-          cd /home/runner/work/Ger_med/Ger_med/codificacao/backend
+          cd /home/runner/work/Ger_med/Ger_med
           php artisan config:clear
           php artisan cache:clear
           composer dump-autoload
 
       - name: Rodar migrations
         run: |
-          cd /home/runner/work/Ger_med/Ger_med/codificacao/backend
+          cd /home/runner/work/Ger_med/Ger_med
           php artisan migrate --force
 
       - name: Rodar testes do Laravel
         run: |
-          cd /home/runner/work/Ger_med/Ger_med/codificacao/backend
+          cd /home/runner/work/Ger_med/Ger_med
           php artisan test
 
   frontend-tests:
@@ -94,7 +97,7 @@ jobs:
 
       - name: Configurar Babel e Jest
         run: |
-          cd frontend
+          cd codificacao/frontend
           echo 'module.exports = {
             presets: [
               "@babel/preset-env",
@@ -120,4 +123,4 @@ jobs:
           };' > jest.config.js
 
       - name: Rodar testes do React
-        run: cd frontend && npm test -- --watchAll=false
+        run: cd codificacao/frontend && npm test -- --watchAll=false
