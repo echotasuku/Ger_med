@@ -59,19 +59,19 @@ jobs:
 
       - name: Limpar cache
         run: |
-          cd /home/runner/work/Ger_med/Ger_med # Garantindo que está no diretório correto
+          cd /home/runner/work/Ger_med/Ger_med/codificacao/backend
           php artisan config:clear
           php artisan cache:clear
           composer dump-autoload
 
       - name: Rodar migrations
         run: |
-          cd /home/runner/work/Ger_med/Ger_med # Garantindo que está no diretório correto
+          cd /home/runner/work/Ger_med/Ger_med/codificacao/backend
           php artisan migrate --force
 
       - name: Rodar testes do Laravel
         run: |
-          cd /home/runner/work/Ger_med/Ger_med # Garantindo que está no diretório correto
+          cd /home/runner/work/Ger_med/Ger_med/codificacao/backend
           php artisan test
 
   frontend-tests:
@@ -88,7 +88,7 @@ jobs:
 
       - name: Instalar dependências do React
         run: |
-          cd frontend
+          cd codificacao/frontend
           npm install
           npm install --save-dev babel-jest @babel/preset-env @babel/preset-react @babel/plugin-proposal-private-methods @babel/plugin-proposal-private-property-in-object
 
