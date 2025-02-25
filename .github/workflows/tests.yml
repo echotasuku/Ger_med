@@ -64,6 +64,7 @@ jobs:
 
       - name: Limpar cache
         run: |
+          cd codificacao/backend
           cd /home/runner/work/Ger_med/Ger_med
           php artisan config:clear
           php artisan cache:clear
@@ -71,11 +72,13 @@ jobs:
 
       - name: Rodar migrations
         run: |
+          cd codificacao/backend
           cd /home/runner/work/Ger_med/Ger_med
           php artisan migrate --force
 
       - name: Rodar testes do Laravel
         run: |
+          cd codificacao/backend
           cd /home/runner/work/Ger_med/Ger_med
           php artisan test
 
