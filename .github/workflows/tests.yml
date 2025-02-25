@@ -69,17 +69,6 @@ jobs:
           cd /home/runner/work/Ger_med/Ger_med # Garantindo que está no diretório correto
           php artisan migrate --force
 
-      - name: Instalar Dusk e configurar navegador
-        run: |
-          cd /home/runner/work/Ger_med/Ger_med # Garantindo que está no diretório correto
-          php artisan dusk:install
-          php artisan dusk:chrome-driver --detect
-          echo "APP_URL=http://localhost" >> .env
-          export DISPLAY=:99
-          sudo apt-get install -y libx11-dev libgdk-pixbuf2.0-dev
-          Xvfb :99 -screen 0 1280x1024x16 &  # Inicia um servidor X virtual (para headless)
-          php artisan serve --no-interaction &
-
       - name: Rodar testes do Laravel
         run: |
           cd /home/runner/work/Ger_med/Ger_med # Garantindo que está no diretório correto
