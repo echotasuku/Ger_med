@@ -2,7 +2,7 @@
 
 **COMO** farmacêutico,  
 **QUERO** gerenciar as retiradas de medicamentos no sistema,  
-**PARA** garantir a rastreabilidade completa, incluindo data e receita médica.  
+**PARA** garantir a rastreabilidade completa, incluindo a receita médica.  
 
 ## Critérios de Aceitação:
 1. O sistema deve permitir que o farmacêutico registre as retiradas de medicamentos, associando a cada retirada a data e a receita médica correspondente.
