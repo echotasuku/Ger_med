@@ -1,52 +1,47 @@
-# Sistema de Gestão de Medicamentos
 
-## Processo de Desenvolvimento
+# **Sistema de Gestão de Medicamentos**  
 
-O processo adotado para o desenvolvimento do **Sistema de Gestão de Medicamentos** combina modelos iterativo e incremental, visando facilitar o controle e a melhoria contínua de funcionalidades críticas, como o cadastro e gerenciamento de medicamentos, fornecedores, categorias e estoque.
+## **Processo de Desenvolvimento**  
 
-### Aspectos e Motivações para a Escolha do Processo
+O desenvolvimento do **Sistema de Gestão de Medicamentos** segue o **modelo cascata**, garantindo um fluxo sequencial e estruturado. Esse modelo foi escolhido por sua abordagem rigorosa, permitindo a definição clara dos requisitos antes do início da implementação e garantindo que cada etapa seja concluída antes do avanço para a próxima fase.  
 
-- **Complexidade e Escopo Progressivo**: O sistema de gestão de medicamentos exige funcionalidades fundamentais para controle de estoque e rastreabilidade de medicamentos, fornecedores e categorias. Com o modelo iterativo e incremental, é possível desenvolver essas funcionalidades de forma modular, adicionando recursos gradativamente. Isso permite a validação contínua junto aos stakeholders, possibilitando ajustes em cada ciclo conforme o sistema evolui.
+### **Aspectos e Motivações para a Escolha do Processo**  
 
-- **Flexibilidade para Mudanças**: À medida que o sistema é usado, novas necessidades ou atualizações podem surgir. A abordagem iterativa facilita a adaptação dessas mudanças, pois cada iteração oferece a oportunidade de revisar e ajustar o escopo. O modelo incremental permite que novas funcionalidades sejam adicionadas de forma controlada, sem comprometer o sistema existente.
+- **Clareza e Organização**: O modelo cascata define um caminho estruturado, onde cada fase do desenvolvimento precisa ser concluída antes de prosseguir para a seguinte. Isso garante que os requisitos do sistema sejam completamente documentados antes da implementação.  
 
-- **Redução de Riscos**: O desenvolvimento incremental minimiza riscos ao permitir que cada parte do sistema seja desenvolvida e testada isoladamente antes de sua integração. Esse processo facilita a identificação precoce de problemas e garante que correções sejam realizadas com eficiência. A abordagem iterativa fornece feedback constante de usuários e stakeholders, reduzindo a chance de erros ou mal-entendidos sobre os requisitos do sistema.
+- **Redução de Incertezas**: Como o escopo do projeto é bem definido desde o início, há menos espaço para mudanças inesperadas. Isso evita retrabalho e garante que o desenvolvimento ocorra de forma previsível.  
 
-- **Entregas Parciais e Valor Contínuo**: Com o modelo iterativo e incremental, módulos podem ser entregues parcialmente, permitindo que os usuários comecem a se beneficiar do sistema mais cedo. Por exemplo, o cadastro e controle básico de medicamentos podem ser entregues inicialmente, enquanto módulos como notificações de validade e relatórios detalhados são desenvolvidos em iterações posteriores.
+- **Garantia de Qualidade**: Como os testes ocorrem apenas após a implementação completa, é possível validar o sistema como um todo, garantindo que todas as funcionalidades estejam de acordo com os requisitos estabelecidos.  
+
+- **Facilidade de Gestão**: O modelo cascata permite um planejamento detalhado, facilitando a alocação de recursos, prazos e responsabilidades de cada fase do projeto.  
 
 ---
 
-## Fluxo do Processo
+## **Fluxo do Processo**  
 
-### 1. Análise e Definição do Escopo
-   - O dono do produto (responsável pelo projeto) analisa a necessidade de funcionalidades ou melhorias.
-   - Verifica se o escopo definido cobre as funcionalidades solicitadas.
-   - Caso necessário, refina o escopo ou elabora um relatório de inviabilidade caso a solicitação não seja viável.
+### **1. Levantamento e Definição de Requisitos**  
+   - Os requisitos do sistema são coletados junto aos stakeholders e documentados de forma detalhada.  
+   - Todas as funcionalidades são especificadas, incluindo **Cadastro de Medicamentos**, **Gerenciamento de Estoque**, **Controle de Retiradas** e **Gestão de Fornecedores**.  
+   - O escopo do sistema é definido e formalizado antes de avançar para a próxima fase.  
 
-### 2. Criação e Especificação de Tarefas
-   - Para cada requisito identificado, o dono do produto cria tarefas no quadro Kanban, cada uma com o status inicial **Indefinida**.
-   - Essas tarefas são associadas ao artefato de requisitos correspondente (como especificações para **Cadastro de Medicamentos**, **Gestão de Estoque**).
-   - Cada tarefa inclui uma descrição detalhada e critérios de aceitação claros.
+### **2. Análise e Modelagem do Sistema**  
+   - Com base nos requisitos, é realizada a análise detalhada para definir a estrutura do sistema.  
+   - São criados os **diagramas de casos de uso e diagramas de componentes**, garantindo uma visão clara da interação dos usuários com o sistema e da organização dos módulos.  
+   - O modelo de banco de dados é estruturado para armazenar as informações de maneira eficiente.  
 
-### 3. Planejamento e Priorização das Tarefas
-   - Tarefas prontas para desenvolvimento recebem o status **Planejada**.
-   - Defina o impacto da tarefa no sistema e a complexidade de implementação para priorizar.
-   - Determine a iteração em que a tarefa será realizada e mova-a para o status **Pronta**.
+---
 
-### 4. Desenvolvimento e Codificação
-   - O desenvolvedor (ou equipe responsável) escolhe uma tarefa com status **Planejada** e inicia o desenvolvimento, alterando o status para **Em Desenvolvimento**.
-   - Durante o desenvolvimento:
-     - Analise a tarefa e detalhe qualquer dúvida ou dificuldade encontrada.
-     - Altere os artefatos de código necessários, garantindo que todas as mudanças estejam associadas à tarefa.
-     - Se a implementação atender aos critérios definidos, o status da tarefa é atualizado para **Realizada**.
+### **3. Projeto do Sistema**  
+   - A estrutura do banco de dados é definida para garantir a organização e integridade das informações.  
+   - São criados os diagramas de **casos de uso** e **componentes**, representando a interação dos usuários e a arquitetura do sistema.  
+   - As regras de negócio são estabelecidas para assegurar o correto funcionamento das funcionalidades, como controle de estoque e registro de retiradas.  
 
-### 5. Revisão e Testes
-   - Após o desenvolvimento, o testador (ou dono do produto) revisa a tarefa com status **Realizada**.
-   - Avalia se o produto entregue atende aos critérios de aceitação.
-   - Caso o critério de aceitação seja cumprido, a tarefa é concluída e arquivada.
-   - Se o produto não atender aos critérios, a tarefa volta para o status **Planejada** para ajustes necessários.
+---
+### **4. Implementação e Desenvolvimento**  
+   - Os desenvolvedores iniciam a construção do sistema com base nas especificações documentadas.  
 
-### 6. Refinamento Contínuo
-   - Em cada iteração, o processo é repetido, e o sistema é continuamente melhorado e adaptado às novas necessidades dos usuários.
-   - Tarefas de ajustes ou aprimoramentos são adicionadas conforme feedback de stakeholders e necessidades operacionais.
+### **5. Testes e Validação**  
+   - São realizados **testes unitários**, garantindo que cada funcionalidade funcione corretamente de forma isolada.  
+   - Caso sejam identificados problemas, ajustes são feitos antes da liberação final.  
 
+---
