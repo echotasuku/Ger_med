@@ -29,3 +29,6 @@ O controle de mudanças é um processo estruturado para gerenciar modificações
 
 ## Considerações Finais
 Esse modelo de controle de mudanças simplifica o desenvolvimento ao evitar múltiplas branches, mas exige um rigor maior na validação e testes. O uso de forks permite um ambiente seguro para experimentação sem comprometer a estabilidade do projeto principal.
+
+### Diagrama de Fluxo:
+![Blank diagram](https://github.com/user-attachments/assets/e4fcd843-45b5-4978-a2bd-7da4c603b6ff)
