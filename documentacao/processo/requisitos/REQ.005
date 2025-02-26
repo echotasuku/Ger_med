@@ -1,0 +1,12 @@
+
+**Controle de Estoque**  
+
+**COMO** farmacêutico,  
+**QUERO** monitorar o estoque de medicamentos no sistema,  
+**PARA** evitar faltas ou excessos e garantir a disponibilidade adequada dos medicamentos.  
+
+**Critérios de Aceitação**:  
+1. O sistema deve permitir o registro da quantidade inicial de cada medicamento no momento do cadastro.  
+2. Deve ser possível atualizar o estoque manualmente para ajustes e reabastecimento.  
+3. O sistema deve reduzir a quantidade do estoque quando uma retirada for registrada. 
+4. Deve ser possível visualizar o histórico de movimentações do estoque.  
