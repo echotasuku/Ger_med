@@ -1,16 +1,16 @@
-### **Contexto (Criado/Refinado)**
+
+### **Contexto (Criado/Refinado)**  
 
 **Fase:** Planejamento  
 
-**Descrição:**  
+**COMO** equipe de desenvolvimento,  
+**QUEREMOS** criar um sistema de Gerenciamento de Estoque de Medicamentos para uma Unidade Básica de Saúde (UBS),  
+**PARA** melhorar a organização, rastreamento e controle de medicamentos, garantindo eficiência e segurança no gerenciamento das informações.  
 
-- Este **Contexto** foi elaborado com base na solicitação inicial para desenvolver um sistema de Gerenciamento de Estoque de Medicamentos em uma Unidade Básica de Saúde (UBS).  
-- O sistema busca solucionar problemas relacionados à organização, rastreamento e controle de medicamentos, garantindo eficiência e segurança no gerenciamento das informações.  
-- Ele inclui funcionalidades como cadastro e atualização de medicamentos, controle de validade, geração de relatórios, retirada de medicamentos e níveis de acesso diferenciados para farmacêuticos e funcionários comuns.  
-- O objetivo é transformar essas demandas em um artefato claro que sirva como base para a construção das histórias de usuário e o planejamento das atividades subsequentes.  
-
-**Utilidade:**  
-
-- Este artefato será utilizado como referência na criação das histórias de usuário, auxiliando no detalhamento das funcionalidades e no planejamento do sistema.  
-
-
+### **Critérios de Aceitação:**  
+1. O sistema deve permitir o cadastro e atualização de medicamentos, incluindo informações como nome, dosagem, fornecedor, categoria e quantidade disponível.  
+2. Deve possibilitar a retirada de medicamentos, registrando responsável, quantidade retirada e data da retirada.  
+3. O sistema deve permitir o gerenciamento de fornecedores, armazenando informações essenciais para facilitar reposições.  
+4. Deve possibilitar a geração de relatórios sobre estoque, retiradas e movimentações de medicamentos.  
+5. O acesso ao sistema deve ser restrito, diferenciando permissões entre farmacêuticos e funcionários comuns.  
+6. O sistema deve garantir a rastreabilidade das movimentações no estoque, armazenando históricos de alterações.  
