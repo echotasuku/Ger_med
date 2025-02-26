@@ -15,5 +15,5 @@
 
 **Instanciado:**  
 
-- Neste repositório, este artefato está no raíz do diretório [documentação](/documentacao/) com a seguinte identificação [contexto](/documentacao/contexto.md)
+- Neste repositório, este artefato está no raíz do diretório [documentação](/documentacao/) com a seguinte identificação [contexto](/documentacao/processo/artefato/contexto.md)
 
