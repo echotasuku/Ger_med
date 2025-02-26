@@ -13,7 +13,4 @@
 
 - Este artefato será utilizado como referência na criação das histórias de usuário, auxiliando no detalhamento das funcionalidades e no planejamento do sistema.  
 
-**Instanciado:**  
-
-- Neste repositório, este artefato está no raíz do diretório [documentação](/documentacao/) com a seguinte identificação [contexto](/documentacao/processo/artefato/contexto.md)
 
