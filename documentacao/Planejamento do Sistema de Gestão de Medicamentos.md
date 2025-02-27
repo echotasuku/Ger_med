@@ -1,4 +1,4 @@
-# Planejamento do Sistema de Gestão de Medicamentos
+# Planejamento do Sistema GerMED
 
 # Contexto do Projeto (Escopo)
 
@@ -14,40 +14,42 @@ O sistema de gestão de medicamentos tem como objetivo principal melhorar o cont
    - Classificação de medicamentos por tipo, uso ou outros critérios relevantes, permitindo organização prática e consultas rápidas.
 3. **Cadastro de Fornecedores**:
    - Registro detalhado de fornecedores, incluindo informações de contato e histórico de fornecimento.
-4. **Controle de Estoque**:
+4. **Cadastro de Estoque**:
    - Monitoramento da validade dos medicamentos e alertas para produtos próximos ao vencimento.
-5. **Registro de Retiradas**:
-   - Documentação de retiradas de medicamentos, garantindo rastreabilidade com base em receitas médicas.
 
 ### O que não será desenvolvido:
 1. Funcionalidades avançadas, como:
-   - Integração com sistemas externos de saúde.
-   - Geração de relatórios personalizados.
-   - Integração com um software que gere pdf
+   - Integração com sistemas externos.
+   - Controle financeiro ou orçamentário.
+   - Monitoramento de consumo individualizado por paciente.
+   - Alertas automatizados via SMS ou email para pacientes.
+   - Chatbot para suporte a usuários do sistema.
      
 
 ## Relevância
 O sistema foi projetado para atender às necessidades de farmacêuticos e funcionários administrativos de UBS, promovendo:
 - Melhor organização do estoque.
 - Redução de desperdícios com medicamentos vencidos.
-- Rastreabilidade confiável para auditorias ou controle interno.
+- Rastreabilidade confiável para controle interno.
 - Facilidade na gestão de informações de fornecedores e medicamentos.
   
 
 ## Cenário de Validação
 A validação desta entrega será feita por meio dos módulos de **CRUD para Categorias, Fornecedores e Medicamentos**:
-- **Categorias**: Garantirão a organização dos medicamentos, separando-os por critérios específicos e facilitando sua localização.
-- **Fornecedores**: Permitirão o registro e consulta de informações sobre parceiros responsáveis pelo fornecimento dos medicamentos.
-- **Medicamentos**: Possibilitarão o cadastro básico de medicamentos com detalhes como nome, descrição, validade, categoria e fornecedor associado.
+- **Medicamentos**: Possibilitará o cadastro básico de medicamentos com detalhes como nome, descrição, validade, categoria e fornecedor associado.
+- **Categorias**: Garantirá a organização dos medicamentos, separando-os por critérios específicos e facilitando sua localização.
+- **Fornecedores**: Permitirá o registro e consulta de informações sobre parceiros responsáveis pelo fornecimento dos medicamentos.
+- **Estoque**: Permitirá o monitoramento da quantidade de medicamentos disponíveis, baixo estoque e próximos ao vencimento, garantindo um controle eficiente e evitando desperdícios.
 
 ## 2. Definição do Processo e Ciclo de Vida do Desenvolvimento
 
 ### Escolha e Justificativa do Modelo de Desenvolvimento
-O modelo escolhido será o **Iterativo Incremental**. Essa escolha foi feita com base nos seguintes fatores:
-- Permitir a entrega de incrementos funcionais ao longo do desenvolvimento, garantindo que o sistema possa ser testado e validado continuamente.
-- Facilitar a adaptação a mudanças de requisitos, já que cada incremento é avaliado e ajustado antes do próximo.
-- Reduzir riscos, abordando partes menores e mais gerenciáveis do sistema em cada iteração.
-- Garantir que cada entrega agregue valor incremental ao sistema e ao usuário final.
+O projeto será desenvolvido seguindo o Modelo Cascata, pois ele organiza o desenvolvimento em etapas bem definidas, o que facilita o planejamento e a execução.  
+
+- **Passo a passo**: Cada fase precisa ser concluída antes de passar para a próxima, garantindo que tudo esteja bem estruturado.  
+- **Menos bagunça**: Como tudo é planejado desde o início, fica mais fácil evitar mudanças inesperadas.  
+- **Mais controle**: Seguir um fluxo linear ajuda a ter uma visão clara do progresso do projeto.  
+
 
 ### Etapas e Atividades
 1. **Planejamento**:
