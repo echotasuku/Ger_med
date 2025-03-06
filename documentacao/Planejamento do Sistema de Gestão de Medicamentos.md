@@ -75,7 +75,7 @@ A tabela abaixo descreve as responsabilidades de cada papel no projeto, os artef
 | **Papel**            | **Artefato de Entrada**       | **Atividade**                                      | **Artefato de Saída**                  |
 |-----------------------|-------------------------------|----------------------------------------------------|----------------------------------------|
 | **Gerente de Projeto** | Documentação de Requisitos    | Organiza tarefas no Kanban e monitora o progresso  | Kanban atualizado e entregas organizadas |
-| **Desenvolvedor**      | Requisitos e Backlog          | Implementa os CRUDs de Categorias e Fornecedores   | Código-fonte funcional                 |
+| **Desenvolvedor**      | Requisitos e Backlog          | Implementa as funcionalidades do sistema           | Código-fonte funcional                 |
 | **Tester**             | Funcionalidades desenvolvidas | Realiza testes unitários e manuais                 | Relatórios de testes                   |
 
 ---
