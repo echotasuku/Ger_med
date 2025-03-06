@@ -16,6 +16,8 @@ O sistema de gestão de medicamentos tem como objetivo principal melhorar o cont
    - Registro detalhado de fornecedores, incluindo informações de contato e histórico de fornecimento.
 4. **Cadastro de Estoque**:
    - Monitoramento da validade dos medicamentos e alertas para produtos próximos ao vencimento.
+5. **Retirada de Medicamentos**:
+   - Controle das retiradas realizadas por funcionários e farmacêuticos, garantindo rastreabilidade e evitando desperdícios ou uso indevido.
 
 ### O que não será desenvolvido:
 1. Funcionalidades avançadas, como:
@@ -40,6 +42,7 @@ A validação desta entrega será feita por meio dos módulos de **CRUD para Cat
 - **Categorias**: Garantirá a organização dos medicamentos, separando-os por critérios específicos e facilitando sua localização.
 - **Fornecedores**: Permitirá o registro e consulta de informações sobre parceiros responsáveis pelo fornecimento dos medicamentos.
 - **Estoque**: Permitirá o monitoramento da quantidade de medicamentos disponíveis, baixo estoque e próximos ao vencimento, garantindo um controle eficiente e evitando desperdícios.
+-  **Retirada de Medicamentos**: Controlará a saída de medicamentos do estoque, registrando quem realizou a retirada, a quantidade retirada e o motivo, assegurando rastreabilidade e conformidade com as regras do sistema.
 
 ## 2. Definição do Processo e Ciclo de Vida do Desenvolvimento
 
