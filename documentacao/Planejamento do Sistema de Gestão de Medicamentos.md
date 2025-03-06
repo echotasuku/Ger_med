@@ -101,9 +101,6 @@ A tabela abaixo descreve as responsabilidades de cada papel no projeto, os artef
 1. O **Gerente de Projeto** utiliza a **Documentação de Requisitos** para organizar as tarefas no Kanban e monitorar o progresso.
 2. O **Desenvolvedor** recebe os **Requisitos e o Backlog** para implementar as funcionalidades, gerando **Código-fonte Funcional**.
 3. O **Tester** utiliza as **Funcionalidades Desenvolvidas** para realizar testes, gerando **Relatórios de Testes**.
-4. Ao final do ciclo, os artefatos de saída (Kanban, Código-fonte, Relatórios) são consolidados para garantir que o projeto está alinhado com os requisitos iniciais.
-
----
 
 ---
 
