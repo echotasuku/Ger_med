@@ -70,21 +70,40 @@ O projeto será desenvolvido seguindo o Modelo Cascata, pois ele organiza o dese
 
 ## Papéis e Responsabilidades
 
-| **Quem (Papel)**          | **Com o quê (Artefato de Entrada)** | **Faz o quê (Atividade)**                          | **Para quê (Artefato de Saída)**                 |
-|----------------------------|-------------------------------------|---------------------------------------------------|-------------------------------------------------|
-| **Gerente de Projeto**     | Documentação de requisitos         | Organiza tarefas no Kanban e monitora o progresso | Kanban atualizado e entregas organizadas        |
-| **Desenvolvedor**          | Requisitos e backlog               | Implementa os CRUDs de Categorias e Fornecedores  | Código-fonte funcional                          |
-| **Tester**                 | Funcionalidades desenvolvidas      | Realiza testes unitários e manuais                | Relatórios de testes                            |
+A tabela abaixo descreve as responsabilidades de cada papel no projeto, os artefatos utilizados como entrada e os resultados gerados (artefatos de saída):
 
+| **Papel**            | **Artefato de Entrada**       | **Atividade**                                      | **Artefato de Saída**                  |
+|-----------------------|-------------------------------|----------------------------------------------------|----------------------------------------|
+| **Gerente de Projeto** | Documentação de Requisitos    | Organiza tarefas no Kanban e monitora o progresso  | Kanban atualizado e entregas organizadas |
+| **Desenvolvedor**      | Requisitos e Backlog          | Implementa os CRUDs de Categorias e Fornecedores   | Código-fonte funcional                 |
+| **Tester**             | Funcionalidades desenvolvidas | Realiza testes unitários e manuais                 | Relatórios de testes                   |
 
 ---
 
 ## Artefatos de Entrada e Saída
 
-- **Planejamento de Backlog**: Documento inicial com as funcionalidades principais e backlog de tarefas.
-- **Documentação de Requisitos**: Lista detalhada das funcionalidades definidas com base nas necessidades dos usuários.
-- **Protótipo Funcional**: CRUDs implementados como artefato de saída do processo de desenvolvimento.
-- **Documentação de Testes**: Casos de teste com resultados esperados e obtidos.
+### Artefatos de Entrada
+1. **Planejamento de Backlog**: Documento inicial que define as funcionalidades principais e o backlog de tarefas.
+2. **Documentação de Requisitos**: Lista detalhada das funcionalidades, baseada nas necessidades dos usuários.
+3. **Funcionalidades Desenvolvidas**: Código-fonte implementado pelos desenvolvedores, que serve como base para os testes.
+
+### Artefatos de Saída
+1. **Kanban Atualizado**: Ferramenta visual que reflete o progresso do projeto, atualizada pelo Gerente de Projeto.
+2. **Código-fonte Funcional**: Resultado do trabalho dos desenvolvedores.
+3. **Relatórios de Testes**: Documentação gerada pelo Tester, contendo os casos de teste e resultados.
+4. **Protótipo Funcional**: Versão inicial do sistema com as funcionalidades básicas implementadas.
+5. **Documentação de Testes**: Detalhamento dos testes realizados, incluindo critérios de aceitação e resultados.
+
+---
+
+## Fluxo de Trabalho
+
+1. O **Gerente de Projeto** utiliza a **Documentação de Requisitos** para organizar as tarefas no Kanban e monitorar o progresso.
+2. O **Desenvolvedor** recebe os **Requisitos e o Backlog** para implementar as funcionalidades, gerando **Código-fonte Funcional**.
+3. O **Tester** utiliza as **Funcionalidades Desenvolvidas** para realizar testes, gerando **Relatórios de Testes**.
+4. Ao final do ciclo, os artefatos de saída (Kanban, Código-fonte, Relatórios) são consolidados para garantir que o projeto está alinhado com os requisitos iniciais.
+
+---
 
 ---
 
@@ -101,24 +120,5 @@ Para organizar o desenvolvimento e acompanhar as alterações no sistema, utiliz
 3. **Documentação Simples**:
    - Decisões e alterações importantes serão registradas no repositório (README), para que a equipe tenha clareza sobre o que foi implementado e o que ainda precisa ser feito.
 
-Essas práticas garantem que o desenvolvimento seja organizado e que o sistema evolua de maneira controlada.
-
----
-
-## Prova de Conceito
-
-Nesta etapa inicial, focaremos na implementação de funcionalidades básicas, essenciais para validar o funcionamento do sistema. Serão desenvolvidos dois CRUDs:
-
-1. **CRUD de Categorias**:
-   - Permite criar, listar, atualizar e excluir categorias de medicamentos. Isso é fundamental para organizar o estoque e facilitar a localização de medicamentos.
-
-2. **CRUD de Fornecedores**:
-   - Permite registrar e consultar informações básicas dos fornecedores, como nome e contato. Essa funcionalidade assegura o controle dos parceiros responsáveis pelo fornecimento dos medicamentos.
-
-
-### Validação
-A prova de conceito será considerada bem-sucedida se:
-- As operações de criação, leitura, atualização e exclusão em ambos os módulos funcionarem corretamente.
-- O sistema apresentar organização e clareza, com as tabelas funcionando de maneira integrada ao banco de dados.
 
 
