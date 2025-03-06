@@ -37,7 +37,7 @@ O sistema foi projetado para atender às necessidades de farmacêuticos e funcio
   
 
 ## Cenário de Validação
-A validação desta entrega será feita por meio dos módulos de **CRUD para Categorias, Fornecedores e Medicamentos**:
+A validação desta entrega será feita por meio dos módulos de **CRUDs de Categorias, Fornecedores, Retiradas, Cadastro de Medicamentos e Estoque.**:
 - **Medicamentos**: Possibilitará o cadastro básico de medicamentos com detalhes como nome, descrição, validade, categoria e fornecedor associado.
 - **Categorias**: Garantirá a organização dos medicamentos, separando-os por critérios específicos e facilitando sua localização.
 - **Fornecedores**: Permitirá o registro e consulta de informações sobre parceiros responsáveis pelo fornecimento dos medicamentos.
@@ -59,7 +59,7 @@ O projeto será desenvolvido seguindo o Modelo Cascata, pois ele organiza o dese
    - Definir requisitos principais e funcionalidades essenciais do sistema.
    - Planejar o backlog de tarefas no GitHub Projects.
 2. **Desenvolvimento**:
-   - Implementar CRUDs de Categorias e Fornecedores.
+   - Implementar As funcionalidades do sistema como por exemplo os CRUDs de Categorias, Fornecedores, Retiradas, Cadastro de Medicamentos e Estoque.
    - Configurar o banco de dados e integrar ferramentas de gerenciamento de dependências (Composer) e controle de versão (Git).
 3. **Teste**:
    - Realizar testes unitários e manuais para validar os CRUDs.
