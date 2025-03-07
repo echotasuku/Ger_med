@@ -56,13 +56,12 @@ O projeto será desenvolvido seguindo o Modelo Cascata, pois ele organiza o dese
 
 ### Etapas e Atividades
 1. **Planejamento**:
-   - Definir requisitos principais e funcionalidades essenciais do sistema.
+   - Definir requisitos e funcionalidades essenciais do sistema.
    - Planejar o backlog de tarefas no GitHub Projects.
 2. **Desenvolvimento**:
-   - Implementar As funcionalidades do sistema como por exemplo os CRUDs de Categorias, Fornecedores, Retiradas, Cadastro de Medicamentos e Estoque.
-   - Configurar o banco de dados e integrar ferramentas de gerenciamento de dependências (Composer) e controle de versão (Git).
+   - Implementar as funcionalidades do sistema.
 3. **Teste**:
-   - Realizar testes unitários e manuais para validar os CRUDs.
+   - Realizar testes unitários e manuais para validar o sistema.
 4. **Entrega**:
    - Apresentar uma versão funcional para feedback e validação.
 
@@ -74,7 +73,7 @@ A tabela abaixo descreve as responsabilidades de cada papel no projeto, os artef
 
 | **Papel**            | **Artefato de Entrada**       | **Atividade**                                      | **Artefato de Saída**                  |
 |-----------------------|-------------------------------|----------------------------------------------------|----------------------------------------|
-| **Gerente de Projeto** | Documentação de Requisitos    | Organiza tarefas no Kanban e monitora o progresso  | Kanban atualizado e entregas organizadas |
+| **Gerente de Projeto** | Documentação                  | Gerencia o projeto como um todo                    | Documentação e quadro kanban atualizados |
 | **Desenvolvedor**      | Requisitos e Backlog          | Implementa as funcionalidades do sistema           | Código-fonte funcional                 |
 | **Tester**             | Funcionalidades desenvolvidas | Realiza testes unitários e manuais                 | Relatórios de testes                   |
 
@@ -83,22 +82,20 @@ A tabela abaixo descreve as responsabilidades de cada papel no projeto, os artef
 ## Artefatos de Entrada e Saída
 
 ### Artefatos de Entrada
-1. **Planejamento de Backlog**: Documento inicial que define as funcionalidades principais e o backlog de tarefas.
-2. **Documentação de Requisitos**: Lista detalhada das funcionalidades, baseada nas necessidades dos usuários.
+1. **Documentação**: Definem as funcionalidades que devem ser implementadas, apresentar metodologias e todo o processo que o projeto deve seguir.
+2. **Requisitos e Backlog**: Funcionalidades que devem ser implementadas no sistema.
 3. **Funcionalidades Desenvolvidas**: Código-fonte implementado pelos desenvolvedores, que serve como base para os testes.
 
 ### Artefatos de Saída
-1. **Kanban Atualizado**: Ferramenta visual que reflete o progresso do projeto, atualizada pelo Gerente de Projeto.
-2. **Código-fonte Funcional**: Resultado do trabalho dos desenvolvedores.
+1. **Documentação e quadro kanban atualizados**: Necessário para que o desenvolvedor possa cumprir com o seu papel de forma organizada e monitorável.
+2. **Código-fonte Funcional**: Resultado do trabalho do desenvolvedor.
 3. **Relatórios de Testes**: Documentação gerada pelo Tester, contendo os casos de teste e resultados.
-4. **Protótipo Funcional**: Versão inicial do sistema com as funcionalidades básicas implementadas.
-5. **Documentação de Testes**: Detalhamento dos testes realizados, incluindo critérios de aceitação e resultados.
 
 ---
 
 ## Fluxo de Trabalho
 
-1. O **Gerente de Projeto** utiliza a **Documentação de Requisitos** para organizar as tarefas no Kanban e monitorar o progresso.
+1. O **Gerente de Projeto** utiliza a **Documentação** para organizar as tarefas no Kanban e monitorar o progresso.
 2. O **Desenvolvedor** recebe os **Requisitos e o Backlog** para implementar as funcionalidades, gerando **Código-fonte Funcional**.
 3. O **Tester** utiliza as **Funcionalidades Desenvolvidas** para realizar testes, gerando **Relatórios de Testes**.
 
@@ -108,14 +105,9 @@ A tabela abaixo descreve as responsabilidades de cada papel no projeto, os artef
 
 Para organizar o desenvolvimento e acompanhar as alterações no sistema, utilizaremos:
 
-1. **Git para Controle de Versão**:
-   - Todas as alterações serão versionadas com commits regulares, organizados em branches específicas para cada funcionalidade. Isso permitirá rastrear o que foi feito e manter o histórico do projeto.
-
-2. **GitHub Projects para Planejamento**:
+1. **GitHub Projects para Planejamento**:
    - As tarefas serão organizadas em um quadro Kanban simples, com colunas como "A Fazer", "Em Andamento" e "Concluído". Isso ajudará no acompanhamento do progresso e na priorização das entregas.
 
-3. **Documentação Simples**:
-   - Decisões e alterações importantes serão registradas no repositório (README), para que a equipe tenha clareza sobre o que foi implementado e o que ainda precisa ser feito.
-
-
+2. **Git para rastreamento**:
+   - Todas as alterações serão versionadas com commits regulares, organizados em branches específicas para cada funcionalidade. Isso permitirá rastrear o que foi feito e manter o histórico do projeto.
 
